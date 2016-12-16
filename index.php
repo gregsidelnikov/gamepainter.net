@@ -16,9 +16,9 @@
 <meta property="og:image" content="http://www.learnjquery.org/Images/tutorial-article.png"/>
 <meta property="og:site_name" content=""/> */ ?>
 <meta property="fb:admins" content="gregsidelnikov"/>
-<script src = 'http://www.gamepainter.net/js/jquery.js' type = 'text/javascript'></script>
-<script src = 'http://www.gamepainter.net/js/ui.js' type = 'text/javascript'></script>
-<script src = 'http://www.gamepainter.net/script.js' type = 'text/javascript'></script>
+<script src = 'js/jquery.js' type = 'text/javascript'></script>
+<script src = 'js/ui.js' type = 'text/javascript'></script>
+<script src = 'js/script.js' type = 'text/javascript'></script>
 <link rel = 'stylesheet' type = 'text/css' href = 'http://www.gamepainter.net/css/style.css' />
     <script type = "text/javascript">
         /* Create global website's object */
@@ -67,17 +67,35 @@
 	#Navigation { background: white; width: 100%; height: 31px; margin: 0 auto; position: relative; padding-top: 8px; }
 	.gamestat { margin-top: 3px; font-size: 11px; font-family: Arial; color: #777; }
     #GameList { position: relative;  margin: 32px; height: auto; background: #fff; }
+
+	#Sidebar { display: none; }
+	.sb-opt { padding: 5px; height: 30px; line-height: 32px; border-bottom: 1px solid #ddd; color: gray; }
+
+	body.Sidebar #GameList { margin-left: 280px; }
+	body.Sidebar #Sidebar { display: block; }
+
     </style>
 </head>
 <body>
 	<div id = "Header">
-	    <img src = "http://www.gamepainter.net/grid.png" alt = "menu" />
+	    <img src = "http://www.gamepainter.net/grid.png" alt = "menu" onclick = "$('body').toggleClass('Sidebar')" />
         <img src = "http://www.gamepainter.net/game-painter-logo.png" style = "margin-top: 5px;" alt = "Game Painter Logo"/>
 	    <img src = "http://www.gamepainter.net/userpic.png" alt = "user" style = "opacity: 0.5; position: absolute; top: 11px; right: 10px; border: 2px solid #333; border-radius: 777px;" />
 	</div>
+
 	<div id = "Navigation">
-		<div class = "MenuOption Selected">Home</div>
-		<?php /* <div class = "MenuOption">Popular</div> */ ?>
+		<div style = "width: 300px; margin: 0 auto">
+			<div class = "MenuOption Selected">Home</div>
+			<?php /* <div class = "MenuOption">Popular</div> */ ?>
+		</div>
+	</div>
+
+	<div id = "Sidebar" style = "position: absolute; top: 89px; left: 0; width: 250px; height: 100%; background: white;">
+		<div class = "sb-opt">Option 1</div>
+		<div class = "sb-opt">Option 2</div>
+		<div class = "sb-opt">Option 3</div>
+		<div class = "sb-opt">Option 4</div>
+		<div class = "sb-opt">Option 5</div>
 	</div>
 	
 	<div id = "GameList">
@@ -92,6 +110,9 @@
 		</div>
 
 		<?php include("gameblock.php"); ?>
+		<?php include("gameblock.php"); ?>
+		<?php include("gameblock.php"); ?>
+
 
 		<div style = "clear: both"></div>
 
