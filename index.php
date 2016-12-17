@@ -45,11 +45,49 @@
     </script>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <script type = "text/javascript">
+		function view(id) {
+			$(".MenuOption").removeClass("Selected");
+			var idd = $(id).attr("id");
+			var uid = $(id).attr("ui");
+			$("#Browse, #CreateGame, #Register, #Login").hide();
+			$($(id).attr("id")).addClass("Selected");
+			$(uid).show();
+		}
 		function ValidateEmail( email ) {
 			if( /(.+)@(.+){2,}\.(.+){2,}/.test( email ) ){ return true; } else { return false; }
 		}
 		function ValidateUsername( username ) {
 			if( /^[a-zA-Z][a-z\.A-Z\-]+$/.test( username ) ) { return true; } else { return false; }
+		}
+		function Id() {
+			var token = localStorage.getItem("token");
+			if (token == 0) return token;
+			$.ajax( { "url" : website.url + "/ajax/getuserid.php",
+				"data" : { "token" : token },
+				"method" : "post",
+				success: function(msg) {
+					localStorage.setItem("id", msg);
+					return msg;
+			} } );
+		}
+		function UpdateUserUI(msg) {
+			if (msg != 0 && msg.length > 8) {
+				$("#loggedin_email").show();
+				$("#loggedin_email").text(localStorage.getItem('email'));
+				$("#loggedin_status").text("Logged in as");
+				$("#logout_button").show();
+			} else {
+				$("#loggedin_email").hide();
+				$("#loggedin_email").text("");
+				$("#loggedin_status").text("Log in to make games");
+				$("#logout_button").hide();
+			}
+		}
+		function LogOut() {
+			localStorage.setItem("token", 0);
+			localStorage.setItem("email", "");
+			UpdateUserUI(0);
+			location.href = '<?php print $URL; ?>';
 		}
 		function SignIn() {
 			var email = $("#login_email_address").val();
@@ -64,8 +102,22 @@
 					//console.log(msg);
 					if (msg == 0) {
 						$("#msg").html('No such email and password combination. Note, your account must be verified in order to validate a sign in attempt.');
-						$("#register_button").prop("disabled", false); }
-					else  if (msg == 1) $("#msg").html('You\'ve successfully logged in. Go make games now! <a href = "<?php print $URL; ?>/create">Create New Game</a>');  else $("#msg").html(msg);
+						$("#signin_button").prop("disabled", false); }
+					else
+					if (msg == 1)  {
+						$("#msg").html("Please wait... Logging in...");
+						$.ajax( { "url" : "<?php print $URL; ?>/ajax/makepasswordtoken.php",
+							"data" : { "email" : email, "password" : pass },
+							"method" : "post",
+						success: function(msg) {
+							localStorage.setItem("token", msg);
+							localStorage.setItem("email", email);
+							UpdateUserUI(msg);
+							if (msg != 0 && msg.length > 8)
+								location.href = '<?php print $URL; ?>';
+						} } );
+						$("#msg").html('You\'ve successfully logged in. Go make games now! <a href = "<?php print $URL; ?>/create">Create New Game</a>');
+					}  else $("#msg").html(msg);
 				}
 			});
 		}
@@ -138,6 +190,7 @@
 	    $(window).resize(function() { Resize(); });
 	    $(window).load(function() { Resize(); });
 	    $(document).ready(function() {
+			UpdateUserUI(localStorage.getItem('token'));
 	    	IsMobile();
 			Resize();
 			Sidebar();
@@ -150,7 +203,7 @@
     .GameInfo { margin: 16px; margin-bottom: 8px; width: 200px; height: 190px; border: 0; float: left; }
     #MenuOptions { width: 500px; margin: auto; }
     .MenuOption { width: 75px; height: 28px; line-height: 24px; float: left; margin-left: 10px; margin-right: 10px; text-align: center; }
-    .MenuOption { border-bottom: 3px solid transparent; }
+    .MenuOption { border-bottom: 3px solid #ddd; cursor: pointer; }
     .MenuOption.Selected { border-bottom: 3px solid #a1dc00; }
 	.gamedesc { font-size: 11px; position: relative; font-family: Arial, sans-serif; }
 	.gameinfo { font-size: 11px;  }
@@ -176,9 +229,15 @@
 
 	#Login { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
 
+	#LaunchGamePainter { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+
 	.block { padding: 16px; }
 	.block-100 { width: 100px; display: inline-block; }
 	.block-500 { width: 450px; display: inline-block; }
+
+	.MenuOption:hover { border-bottom: 3px #a1dc00 solid; }
+
+		#Register, #CreateGame, #Login, #LaunchGamePainter { display:none; }
 
     </style>
 </head>
@@ -186,24 +245,25 @@
 	<div id = "Header">
 	    <img src = "http://www.gamepainter.net/grid.png" alt = "menu" onclick = "ToggleSidebar()" style = "cursor: pointer;" />
         <img src = "http://www.gamepainter.net/game-painter-logo.png" style = "margin-top: 5px;" alt = "Game Painter Logo"/>
-	    <img src = "http://www.gamepainter.net/userpic.png" alt = "user" style = "opacity: 0.5; position: absolute; top: 11px; right: 10px; border: 2px solid #333; border-radius: 777px;" />
+		<img src = "http://www.gamepainter.net/userpic.png" alt = "user" style = "opacity: 0.5; position: absolute; top: 11px; right: 10px; border: 2px solid #333; border-radius: 777px;" />
+		<div style = "position: absolute; top: 20px; right: 50px; width: auto; text-align: right;"><b style = "color:#88c000;" id = "loggedin_status"></b> <span id = "loggedin_email"></span></div>
 	</div>
 
 	<div id = "Navigation">
 		<div style = "width: 600px; margin: 0 auto">
-			<div class = "MenuOption Selected" onclick = "view('#Browse')">Browse</div>
-			<div class = "MenuOption" style = "min-width: 120px;" onclick = "view('#CreateGame');">Create New Game</div>
-			<div class = "MenuOption" onclick = "view('#Register')">Register</div>
-			<div class = "MenuOption" onclick = "view('#Login')">Login</div>
-			<?php /* <div class = "MenuOption">Popular</div> */ ?>
+			<div id = "browse"   ui = "#GameList"   class = "MenuOption Selected" onclick = "view(this)">Browse</div>
+			<div id = "create"   ui = "#CreateGame"   class = "MenuOption" style = "min-width: 120px;" onclick = "view(this);">Create New Game</div>
+			<div id = "register" ui = "#Register" class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Register</div>
+			<div id = "login"    ui = "#Login"    class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Login</div>
 		</div>
 	</div>
 
 	<div id = "Sidebar" style = "position: absolute; top: 89px; left: 0; width: 180px; height: 100%; background: white;">
-		<div class = "sb-opt"><div class = "icon"></div> Home</div>
+		<div class = "sb-opt" onclick = "location.href='<?php print $URL; ?>'"><div class = "icon"></div> Home</div>
 		<div class = "sb-opt"><div class = "icon"></div> My Games</div>
 		<div class = "sb-opt"><div class = "icon"></div> Analytics</div>
 		<div class = "sb-opt"><div class = "icon"></div> Contact</div>
+		<div class = "sb-opt" onclick = "LogOut()" id = "logout_button"><div class = "icon"></div> <b>Log Out</b></div>
 	</div>
 
 	<div id = "Login">
@@ -216,7 +276,7 @@
 			<p>You must be logged in to start making games with Game Painter.</p>
 			<ul>
 				<li>Use Game Painter software to make your game right in your browser.</li>
-				<li>Publish your game for free at <span style = "color: blue">http://www.gamepainter.com/<b>jkD35sfai</b></span> (unique game identifier)</li>
+				<li>Publish your game for free at <span style = "color: gray">http://www.gamepainter.com/<b>jkD35sfai</b></span> (unique game identifier)</li>
 				<li>Compete with other game developers, receive feedback from players and share your game with friends!</li>
 			</ul>
 
@@ -238,9 +298,18 @@
 
 		<div class = "block">
 			<div class = "block-100"></div>
-			<div class = "block-500"><input type = "button" value = "Register" onclick = "SignIn()" id = "signin_button"/></div>
+			<div class = "block-500"><input type = "button" value = "Sign In" onclick = "SignIn()" id = "signin_button"/></div>
 		</div>
 
+	</div>
+
+	<div id = "LaunchGamePainter">
+		<div class = "block">
+			<b>Launch Game Painter</b>
+		</div>
+		<div class = "block">
+			<p>Looks like you're already logged into your account. This means you're ready to start using Game painter! So go make games and have fun.</p>
+		</div>
 	</div>
 
 	<div id = "CreateGame">
@@ -253,7 +322,7 @@
 			<p>To start making games you need a Game Painter account. This will enable you to:</p>
 			<ul>
 				<li>Use Game Painter software to make your game right in your browser.</li>
-				<li>Publish your game for free at <span style = "color: blue">http://www.gamepainter.com/<b>jkD35sfai</b></span> (unique game identifier)</li>
+				<li>Publish your game for free at <span style = "color: gray">http://www.gamepainter.com/<b>jkD35sfai</b></span> (unique game identifier)</li>
 				<li>Compete with other game developers, receive feedback from players and share your game with friends!</li>
 			</ul>
 
