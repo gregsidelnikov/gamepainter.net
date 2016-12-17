@@ -18,7 +18,7 @@
 <meta property="fb:admins" content="gregsidelnikov"/>
 <script src = 'js/jquery.js' type = 'text/javascript'></script>
 <script src = 'js/ui.js' type = 'text/javascript'></script>
-<script src = 'js/script.js' type = 'text/javascript'></script>
+<?php /* <script src = 'js/script.js' type = 'text/javascript'></script> */ ?>
 <link rel = 'stylesheet' type = 'text/css' href = 'http://www.gamepainter.net/css/style.css' />
     <script type = "text/javascript">
         /* Create global website's object */
@@ -42,6 +42,25 @@
     </script>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <script type = "text/javascript">
+		function ToggleSidebar() {
+			$('body').removeClass("Sidebar");
+			if (window.sidebar == "true")  {
+				localStorage.setItem('sidebar', "false");
+			} else {
+				$('body').addClass("Sidebar");
+				localStorage.setItem('sidebar', "true");
+			}
+		}
+		function Sidebar() {
+			$('body').removeClass("Sidebar");
+			window.sidebar = localStorage.getItem('sidebar');
+			console.log(window.sidebar);
+			if (window.sidebar == "true") {
+				$('body').addClass("Sidebar");
+			} else {
+				localStorage.setItem('sidebar', "false");
+			}
+		}
     	function IsMobile() { if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { window.mobile = true; $("body *").addClass("IncreaseFontSize"); } }
     	function Resize() {
 //        	if (w < 900) { $("body").addClass("MiniSite"); } else { $("body").removeClass("MiniSite"); }
@@ -51,6 +70,7 @@
 	    $(document).ready(function() {
 	    	IsMobile();
 			Resize();
+			Sidebar();
 	    });
     </script>
     <style type = "text/css">
@@ -72,13 +92,13 @@
 	.sb-opt { padding: 5px; height: 30px; line-height: 32px; border-bottom: 1px solid #ddd; color: gray; }
 
 	body.Sidebar #GameList { margin-left: 280px; }
-	body.Sidebar #Sidebar { display: block; }
+	body.Sidebar #Sidebar { display: block !important; }
 
     </style>
 </head>
 <body>
 	<div id = "Header">
-	    <img src = "http://www.gamepainter.net/grid.png" alt = "menu" onclick = "$('body').toggleClass('Sidebar')" />
+	    <img src = "http://www.gamepainter.net/grid.png" alt = "menu" onclick = "ToggleSidebar()" />
         <img src = "http://www.gamepainter.net/game-painter-logo.png" style = "margin-top: 5px;" alt = "Game Painter Logo"/>
 	    <img src = "http://www.gamepainter.net/userpic.png" alt = "user" style = "opacity: 0.5; position: absolute; top: 11px; right: 10px; border: 2px solid #333; border-radius: 777px;" />
 	</div>
