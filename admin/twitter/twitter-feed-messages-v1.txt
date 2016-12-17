@@ -1,0 +1,50 @@
+Learn How to Become a Web Developer Part I - 7 Principles http://www.learnjquery.org/newsletter/Tutorial-13-learn-to-become-a-web-developer.html
+Learn How to Become a Web Developer Part II http://www.learnjquery.org/newsletter/Tutorial-14-learn-to-become-a-web-developer-part-ii.html
+HTML Tetris (WIP, needs horizontal block fill drop) http://www.authenticsociety.com/jquery-tetris/tetris.php #jquery #html
+This voluntary PayPal donation (http://www.learnjquery.org/newsletter/donate.html) helps me write Free #jquery Tutorials and upgrade my e-book www.learnjquery.org
+Touchscreen UI #jquery #html http://www.authenticsociety.com/UI
+Learn to Draw a Line on #HTML #Canvas (source code) http://www.learnjquery.org/canvas/index5.html #jquery
+Free #jQuery Tutorial Newsletter - http://www.learnjquery.org/newsletter/Tutorial-0-welcome.html #jquery
+Tutorial - 1 - Make your own #jQuery plugins? - http://www.learnjquery.org/newsletter/Tutorial-1-jquery-plugin-development.html
+Tutorial - 2 - CSS Selectors Walkthrough - http://www.learnjquery.org/newsletter/Tutorial-2-jquery-css-selectors-walkthrough.html
+My first ever #jQuery plugin - http://www.authenticsociety.com/gShuffle-1/ with source code. It could be improved.
+Tutorial - 3 - Understanding #jQuery Events - http://www.learnjquery.org/newsletter/Tutorial-3-jquery-events.html
+Tutorial - 4 - Speeding up #jQuery code - http://www.learnjquery.org/newsletter/Tutorial-3-jquery-events.html
+Regular Expressions. How will you know it's them when you see them? - http://learnjquery.org/newsletter/Tutorial-8-regular-expressions-regex.html #jquery #regex
+Tutorial - 5 - #jQuery Ajax and HTTP Requests - http://www.learnjquery.org/newsletter/Tutorial-5-jquery-ajax-http.html
+Tutorial - 6 - #jQuery CSS Selectors (in greater depth) - http://www.learnjquery.org/newsletter/Tutorial-6-more-about-css-selectors.html
+Still time to pre-order my #jQuery book - http://www.learnjquery.org/
+Tutorial - 7 - #jQuery HTML Sprite Animation - http://www.learnjquery.org/newsletter/Tutorial-7-jquery-animation.html
+JavaScript Aladdin Animation Tutorial - http://www.authenticsociety.com/gSprite/ #jquery
+Tutorial - 8 - Regular Expressions - http://www.learnjquery.org/newsletter/Tutorial-8-regular-expressions-regex.html
+Tutorial - 9 - innerHTML and html() - http://www.learnjquery.org/newsletter/Tutorial-9-innerHTML-and-jquery.html
+That #jQuery Tutorial that started the whole thing - http://www.authenticsociety.com/blog/jQueryPluginTutorial_Beginner
+HTML Gradients, No Canvas. No Images. Just HTML5 and Pink Floyd - http://www.learnjquery.org/newsletter/html5-gradients-floyd.html
+HTML5 game protect the Earth - http://www.writingandcreativity.com/games/protect-the-earth/game.html #html #game
+My jQuery PDF e-book - www.learnjquery.org #jquery
+I am cutting down the price of my jQuery e-book for another month as I add more contend and edit it.
+HTML, Gradients, Rounded corners (No images.) - http://learnjquery.org/demos/index7.html #jquery
+Seagulls Detected HTML Demo http://www.learnjquery.org/demos/3d-css.html - #jquery
+Free jQuery Tutorial Newsletter - http://www.authenticsociety.com/blog/WhatisjQuery_Part1
+Increasing Productivity: Choosing Intuition vs. Logic - http://www.writingandcreativity.com/increasing-productivity-choosing-intuition-vs-logic.html #productivity
+How To Increase Your Creativity - http://www.writingandcreativity.com/how-to-increase-your-creativity.html #creativity
+How To Increase Productivity At Expense of New Ideas - http://www.writingandcreativity.com/how-to-increase-productivity-at-expense-of-new-ideas.html #productivity
+Discover Your Creativity By Developing Awareness - http://www.writingandcreativity.com/discover-your-creativity-by-developing-awareness.html #creativity
+How to Increase Traffic to Your Website (The Psychological Approach) http://www.websitehomework.com/how-to-increase-traffic-to-your-website.html #html tutorial
+Learn About URLs and Domain Names - http://www.websitehomework.com/website-url.html #html tutorial
+HTML Tutorials - http://www.websitehomework.com/html.html #html tutorial
+More HTML Tutorials - http://www.websitehomework.com/new-html-tutorials-oct-14-2011.html #html tutorial
+Why is There a Slash at the End of a Domain Name? http://www.websitehomework.com/slash-end-domain-name-url.html #html tutorial
+HTML Anchor Tag Explained - http://www.websitehomework.com/html-anchor-tag-href-url-linking.html #html tutorial
+Corretly Pointing URLs to Websites with an External Domain Name - http://www.websitehomework.com/point-href-url-to-websites-with-external-domain-names.html #html tutorial
+Anatomy of a Domain Name - http://www.websitehomework.com/domain-name-anatomy.html #html tutorial
+What Does Hypertext in HTTP Stand For? http://www.websitehomework.com/domain-name-anatomy.html #html tutorial
+Learn HTML Basics - http://www.websitehomework.com/learn-html-basics.html #html tutorial
+Learn Basic HTML Tags - http://www.websitehomework.com/basic-html-tags.html #html tutorial
+Writing & Creativity - http://www.writingandcreativity.com/ #writing
+An article I wrote. Just for fun. How to Make French Toast - http://www.makefrenchtoast.com/how-to-make-french-toast.html #cooking #recipe
+Learn to Create HTML Tables http://www.websitehomework.com/create-html-tables.html #html
+How to Merge HTML Table Cells - http://www.websitehomework.com/merge-table-cells.html (legacy #html tutorial)
+How to Create a 1-Pixel Wide Table Cell Border - http://www.websitehomework.com/html-table-1-pixel-border-css.html #html
+HTML Tag Nesting - http://www.websitehomework.com/nesting-html-tags-elements-inside-other-tags.html #html
+Difference Between ID and CLASS attributes - http://www.websitehomework.com/difference-between-class-and-id-attributes.html #html

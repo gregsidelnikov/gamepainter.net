@@ -1,0 +1,232 @@
+New jQuery Tutorials http://www.learnjquery.org/tutorials/ #jquery #javascript
+#jquery: the ready event is not limited to document object alone. Example: $("#submit").ready(function(){ /* submit button loaded */ });
+#jquery: However, the ready event should not be used to see if images were finished loading. DOM is different from bandwidth-based content.
+The "this" Variable in JavaScript http://www.learnjquery.org/about/this-variable-in-javascript.html
+#jquery: to check if images have actually finished downloading use $("img").load(...); However, this will not trigger browser-cached images.
+#jquery: Finally, use $('#myImage').prop('complete') together with $("img").load(...). The former returns true when an image is loaded.
+jQuery Plug-in Development Tutorial http://www.learnjquery.org/newsletter/Tutorial-1-jquery-plugin-development.html #jquery
+#jquery: $("p").add("div").hide() will hide all &lt;p&gt; and all &lt;div&gt; elements. But $("p").end().add("div").hide(); will only hide &lt;div&gt;s
+#jquery: To find all HTML elements set the context to document.body so elements like head and script are left out.
+Is Programming Art? http://www.learnjquery.org/about/is-programming-art.html
+#jquery: You can add your own jQuery methods to the main jQuery object using: $.extend( { method: function(a,b){..} } );
+#jquery: $("div").get(1) is the same as $("div")[1]; - both return the raw JavaScript DOM object at index 1 in selection.
+#jquery: Use .get() to access the array of matched elements. For example you can get __and__ reverse order: $("div").get().reverse();
+jQuery CSS Selectors Tutorial -- http://www.learnjquery.org/newsletter/Tutorial-2-jquery-css-selectors-walkthrough.html #jquery
+#jquery: Reduce the selection to the one at the selected index only -- $("p").eq(1).css("color", "red"); // it's a 0-index based
+#jquery: Find an element counting index _backwards_ from the last element in selection: $("p").eq(-1); // This time it's not 0-index based
+In jQuery .eq(1) is not the same as $("p:first"); Let's take a look at this example to see the difference: http://jsfiddle.net/YDtEj/ #jquery
+Simulating Touchscreen Inertia with Custom JavaScript Code http://www.learnjquery.org/about/simulating-touchscreen-inertia-ui-js.html
+#jquery: nth-child(1) is not 0-index based because it's derived from the CSS specification. All other jQuery selectors are 0-index based
+#jquery: To find out the number of selected elements, use the length property - var n = $("div").length;
+#jquery: Use .each() to run a function on each selected element $("div").each(function(){ this.style.color = "blue"; });
+Understanding jQuery Events -- http://www.learnjquery.org/newsletter/Tutorial-3-jquery-events.html #jquery
+#jquery: You can pass the raw JavaScript element to jQuery - $(document.body).css( "background", "black" );
+#jquery: It is possible to pass plain HTML written by hand to jQuery - $("&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;").appendTo("body");
+Learn JavaScript Primitive Coercion http://www.learnjquery.org/about/javascript-primitive-coercion.html
+#jquery: $("input:radio", document.forms[0]); - finds all inputs of type radio within the first form in the document.
+#jquery: $("#clock")[0] is exactly the same as document.getElementById("clock");
+Converting HTML5 Elements Into jQuery Mobile UI Controls http://www.learnjquery.org/about/jquery-mobile-and-html5-tags.html
+#jquery: The [] index will "dereference" a jQuery selector into a raw DOM object: $("#id")[0].style.color='#000000';
+jQuery Tutorial E-book http://www.learnjquery.org is a tutorial vinaigrette with web development insights on the side #jquery
+#jquery: The [0] index gets us the raw DOM object from a jQuery selector - $($("#p2")[0]).prependTo($("#p1")[0]); works
+#jquery: To say that variables are objects is a mistake. Objects are assigned to variables. Variable is just a handle.
+The Life of JavaScript Function Properties http://www.learnjquery.org/about/javascript-function-properties.html
+#jquery: :nth-child() selects all elements that are n-th __child__ of their parent. :eq() selects at index n __within the matched set__
+#jquery: A variable is an interface to the language but isn't an object or an integer itself. That would be the data.
+#jquery: Trying to prepend an element to itself will just remove it from the DOM -- $("#p2").prepend("#p2");
+jQuery + Ajax Tutorial -- http://www.learnjquery.org/newsletter/Tutorial-5-jquery-ajax-http.html #jquery
+#jquery: Though unwise, it __is__ possible to pass the jQuery selector itself as arguments to a method - $($("#p1")).prepend($("#p2"));
+#jquery: You can pass raw DOM objects as arguments: $(document.getElementById("p1")).prepend(document.getElementById("p2"));
+Understanding JavaScript Functions http://www.learnjquery.org/about/javascript-functions.html
+#jquery: With jquery.ui.js you can turn a UL/LI list into an interactive drag & drop sortable list by calling .sortable()
+#jquery: jquery.ui.js is an add-on library to jquery.js -- required for animation easing, complex mouse events, etc.
+#jquery: Make any HTML element draggable with jQuery UI -- $("#draggable").draggable(); -- &lt;div id = "draggable"&gt;&lt;/div&gt;
+jQuery CSS Selectors Part II -- http://www.learnjquery.org/newsletter/Tutorial-6-more-about-css-selectors.html #jquery
+#jquery: $("form").serialize() will return a string of all elements inside the form -- name=value&name2=value2 -- etc.
+#jquery: $("div,p"); is the same as $("div").add("p");
+#jquery: The $(arg1, arg2); function is not limited to string selectors. It can also take a js object or jQuery object.
+How to Improve jQuery's next() and prev() Methods http://www.learnjquery.org/about/jquery-css-next-prev-plugin.html
+#jquery: It's possible to pass a selector to the add function -- $("div").add( $("p") ); -- selects all p + all div.
+#jquery: Use $("div").add(html) to add HTML to all matched elements. Alternatively you can use - $("div").html(html);
+#jquery: $("div").hide().add("p").show() -- will result in all &lt;div&gt;s and all &lt;p&gt;s shown.
+jQuery Sprite Animation -- http://www.learnjquery.org/newsletter/Tutorial-7-jquery-animation.html #jquery
+#jquery: Use end() to clear selector cache on one line of code -- $("div").hide().end().add("p").show() -- &lt;div&gt;s hidden, &lt;p&gt;'s shown
+#jquery: JavaScript is the only language people start using without actually learning it.
+Double or Single Quotes? http://www.learnjquery.org/about/javascript-double-or-single-quotes.html
+Expert knowledge is very concise and it is never useful to a beginner who is looking for in-depth answers to simple questions.
+#jquery: The.toJSON() method exists natively on the Date, Number, String, and Boolean objects.
+#jquery: Use JSON.parse(json_string) instead of eval(json_string) to obtain the JSON object.
+A jQuery tutorial book http://www.learnjquery.org known for its easy to follow yet {in-depth} explanations #jquery
+#jquery: eval() is very fast. However, it can compile and execute any JavaScript program so there can be security risks.
+#jquery: JSON.stringify( json_obj ) -- to convert an actual object back into a string, perhaps for sending over network.
+#jquery: JSON.parse(string) will parse the JSON string format and return a JavaScript object that was created from it.
+#jquery: JSON.parse(json_str) appears to take strict JSON only. '{"a": "1"}' will work but not '{a: "1"}' (without the quotes.)
+#jquery: JSON is not an actual object in JavaScript, like Integer, String, Array are. It is basically just a string data format.
+How to Become a Web Developer {article} -- http://www.learnjquery.org/newsletter/Tutorial-13-learn-to-become-a-web-developer.html #jquery
+#jquery: Versatility of a script language: var x = { "type": "palm tree" }.type -- this statement will result in x = "palm tree."
+#jquery: alert($("p").css("display")); returns "block" as default.
+#jQuery tut. 64: A string literal is not an object. It's internally cast to an object when a method of String.prototype is called on it.
+The prototype property (jQuery renames it to $.fn = $.prototype) can be used to add your own methods to the library. #jquery
+The prototype property derives its name from the Prototype-based Object Model (http://en.wikipedia.org/wiki/Prototype-based_programming) implemented by #javascript
+#jquery: When you change the value of a prototype property it also changes across all existing objects derived from it.
+jQuery CSS and DOM -- http://www.learnjquery.org/newsletter/Tutorial-17-learn-jquery-css-dom-selectors.html #jquery
+#jquery: Notice that the prototype property refers to the original and global object composition. Not just new object.
+#jquery: Using prototype to add properties: function f() { }; var obj = new f(); obj.prototype.ha = 1; alert(obj.ha);
+#jquery: eval(statement) is used to evaluate a JavaScript statement. It can even convert a string into function object.
+#jquery: Thinking about "prototype": var f = function(){ }; alert(f.prototype.constructor == f); // will return "true"
+#jquery: The prototype is an object property that allows you to add properties and methods to an object.
+An article for those who are just starting to learn jQuery -- http://www.learnjquery.org/newsletter/Tutorial-18-learn-jquery-basics.html #jquery
+#jquery: By design, everything in JavaScript is an object. But only objects of type "function" have a prototype.
+#jquery: Everyone is confused about what "prototype" is in JavaScript. The following tweets will try to shed light.
+#jquery: "hello".length is an object property(aka variable) and "hello".substr(1,2) is an object method(aka function).
+#jquery: Interestingly, even an in-line literal string statement "hello" can refer to an object. That's why "hello".length works.
+jQuery and JavaScript Tutorials http://www.learnjquery.org #jquery
+#jquery: A number of things created with "var" in JavaScript usually refers to an object.
+#jquery: $("p").animate( { borderWidth: "200px" } ); will work without jquery-ui.js (However "borderColor" will not.)
+#jquery: $("p").animate( { borderColor: "red" } ); will not work unless jquery-ui.js is included in addition to jquery.js
+#jquery: Animate font size in all paragraphs to 100px over 5 seconds - $("p").animate({ fontSize: "100px" }, 5000);
+Speeding Up jQuery Using Context Parameter -- http://www.learnjquery.org/newsletter/Tutorial-4-how-to-speed-up-jquery-selectors.html #jquery
+#jquery: Add border and animate it to red: $("p").css( "border", "10px solid blue" ).animate( { borderColor: "red" } );
+#jquery: $("p").css( { opacity: 0.25 } ); and $("p").css( "opacity", "0.25" ); are one and the same thing.
+#jquery: $("div").animate({opacity: 0.25, }); to dynamically fade an element to an opacity of 25% (cross-browser.)
+#jquery: $("div").animate({left: "+=100px" }); will slide the selected div right by 100px counting from current location.
+#jquery: In .animate(css); The first argument "css" is usually a JSON notation. Ex: {left: "100px", top: "10px" }
+jQuery + RegEx Tutorial -- http://learnjquery.org/newsletter/Tutorial-8-regular-expressions-regex.html #jquery
+#jquery: use .animate(arg); to dynamically change the CSS style of an element to a new state specified as first argument.
+#jquery: $(document).ready(handler) is the same as $(document).bind("ready", handler);
+#jquery: Attaching .ready() to the document object (top DOM object) means to run code when entire DOM finishes loading.
+#jquery: .ready() is a function that executes when a DOM element is finished loading, or "is ready" to work with.
+#jquery: Access JSON (see previous tweet) - $.data($("div")[0], "test").apples; or $.data($("div")[0], "test").oranges;
+JavaScript Variables, What are they? {article} -- http://www.learnjquery.org/newsletter/Tutorial-19-javascript-variables-and-incrementing-binary-numbers.html #javascript
+#jquery: Assign JSON to arbitrary DOM element - jQuery.data($("div")[0], "test", { apples: 16, oranges: "string" });
+#jquery: Create "global" variables attached to a specific DOM element using - $.data(document.body, 'apples', 7);
+#jquery: Use $("div#id").toggleClass("classname"); to add/remove the specified class to/from an element.
+#jquery: Dynamically fade an element to an opacity .fadeTo(duration, opacity); where opacity is between 0.0: 1.0.
+jQuery and JavaScript Tutorials http://www.learnjquery.org/tutorials/ #jquery #javascript
+#jquery: To globally turn all animations off and set all running animations to final state: jQuery.fx.off = true;
+#jquery: To set vertical scroll bar to 100px down you can use: $("body").scrollTop(100);
+#jquery: You can easily get the vertical scroll bar position as an integer (without 'px') by doing $("body").scrollTop();
+#jquery: Example of using .offset(): var pos = $("div").offset(); var x = pos.left; var y = pos.top;
+#jquery: .offset() method retrieves position of an element relative to the document and .position() relative to parent.
+#jquery: to get x/y offset of an element relative to the x=0, y=0 of the whole document itself, use $("div#id").offset();
+#jquery: To access DOM directly you can dereference the returned jQuery object using [0] alert($("div")[0].style.height);
+#jquery: Get the value of a selected radio button in a radio button set: $('input:radio[name=clocktype]:checked').val();
+#jquery: Get the current value of a select/option drop-down menu: $('select#menu').val();
+#jquery: A reliable way to check if a "checkbox" or "radio button" is checked: if ($("input#id").is(":checked") == true);
+#jquery: var h = $("p").outerHeight() includes padding+border. var h = $("p").innerHeight() includes padding only.
+Learn HTML5 canvas basics: &lt;canvas&gt; works but never seem to have the time? -- http://www.learnjquery.org/canvas/index5.html #html #canvas
+#jquery: wrap() is not limited to legal HTML: $("p").wrap("&lt;div anything /&gt;") will produce &lt;div anything&gt;&lt;p&gt;abc&lt;/p&gt;&lt;/div&gt;
+#jquery: You can get actual height in px of an HTML element with "height:auto" by running $("P").css("height");
+#jquery: The global default animation delay for all jQuery animations can be reset by: jQuery.fx.interval = 100;
+#jquery: It is possible to assign more than one inline class to an element using the space &lt;DIV class="foo bar"&gt;&lt;/DIV&gt;
+#jquery: Determine if an HTML element has a CSS class: $("div#id").hasClass("blue") - returns true or false.
+jQuery image slider code-base {a place to start} http://www.learnjquery.org/newsletter/slideshow.html #jquery
+#jquery: Dynamically add/remove CSS to/from an element by calling .addClass("classname"); and .removeClass("classname");
+#jquery: You can trigger events that are already bound to an HTML element by using the method: $("div").trigger("click");
+#jquery: A self-removing event that removes itself after the event executes can be created using the .one() function.
+#jquery: Input elements: .blur(function(){...}) is a shortcut to .bind('blur', function(){...})
+#jquery: Using self-reference "this" inside callback to hide target on onclick: $('p').click(function(){$(this).hide()});
+#jquery: $("DIV").hide() will hide all DIVs immediately. But $("DIV").hide("slow") will run a weird slide/fade animation.
+#jquery: appendTo() does exactly the same thing as append(), except the selector and functions' arguments are reversed.
+#jquery: To "cut and paste" all &lt;P&gt; tags on the page and move them into #container, use - $("P").appendTo("#container");
+#jquery: Get HTML inside of an element whose id is "clock" and store as text string - var content = $("#clock").html();
+#jquery: Use .wrap() to "surround" HTML elements with other elements - $('P').wrap('&lt;DIV /&gt;'); wraps all Ps with 2 DIVs.
+#jquery: $('div').prepend('Before').append('After'); on "&lt;div&gt;1&lt;/div&gt;" will produce "&lt;div&gt;Before1After&lt;/div&gt;"
+/*A comment is a way of telling yourself that you used to know the meaning of your code*/
+#jquery: Latest version recommends that we start using .on() and .off() instead of .bind(), .unbind(), .click(), etc.
+#jquery: A nameless "callback function" is most often the last argument. It's executed when the statement is finished.
+#jquery: The .attr("var"); method can refer to a custom attribute invented by yourself. For example: &lt;div var="xyz"&gt;
+#jquery: You can stack up ":not" selectors using space as in - $("* :not('ul') :not('body')").css("background","red");
+#jquery: Little known CSS selector is ":not", it helps to select "everything but xyz." Example $("* :not('xyz')").hide();
+#jquery A quick way to check if an element exists would be to check if length is &gt; 0 -- if ($("#element").length &gt; 0) { /*exist(s)*/ }
+#jquery Determine if we are in IE &gt; 6 -- if ($.browser.msie && $.browser.version &gt; 6) { /*standard HTML code might work*/ }
+#jquery Determine if we are in Chrome - if ($.browser.chrome) { /*we are*/ }
+#jquery localStorage.someData = "This is going to be saved across page refreshes and browser restarts"; #html5
+#jquery To set global AJAX defaults use $.ajaxSetup({url: '/ajax/default.php'}); -- More on http://api.jquery.com/category/ajax/
+#jquery Turn your code into a jQuery plugin - (function($){ $.fn.yourPluginName = function(){ /* Your code */ return this; }; })(jQuery);
+I have a head and a script. But I'm not HTML.
+#jquery The more content your page has, the more time it takes your browser to render it. Get a count of the DOM elements on your page  $('*').length
+#jquery You can create your own easing functions - $.easing.easeMyWay = function (x, t, b, c, d) { return x; } Examples  http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js
+#jquery To select a random element - $("p")[Math.floor(Math.random() * $("p").length)];
+#jquery To check if any elements were actually selected - if($("p").length) { /* Found P tags */ }
+#jquery Keep CSS selectors as simple as possible.
+#jquery If you call a selector at least once, you should cache it. (Store it in a variable, instead of selecting it over and over again.)
+#jquery You are not using the latest version of jQuery. Why not?
+#jquery If you wonder why you still don't understand "event bubbling" it means you need to learn Event Delegation first. http://davidwalsh.name/event-delegate
+#jquery Event Delegation is a concept used to avoid adding event listeners to specific nodes. Instead, event is added to the parent element.
+#jquery When creating animated navigation controls you may need to stop animation first $("#button").stop().animate(); on mouseover events.
+#jquery To run two animations one after another, use chaining: $("#door").animate(/*unlock*/).animate(/*open*/);
+Learn more from my jQuery PDF tutorial book -- http://www.learnjquery.org #jquery #javascript
+#jquery To run two animations simultaneously, call it one after another $("a").animate(); $("b").animate();
+#jquery For toggling classes you can use chaining: $("#button").removeClass("off").addClass("on"); eg: on mouseover event.
+#jquery Get in the habit of giving your selectors a context wherever possible. $(selector, context_selector);
+#jquery Think twice to favor IDs over CLASSes wherever possible.
+#jquery Wrapping argument of .html(arg) in a  single tag may result in a performance increase. Example .html("&lt;ul&gt;" + lots_of_li + "&lt;/ul&gt;");
+jQuery Plug-in Development Tutorial -- http://www.learnjquery.org/newsletter/Tutorial-1-jquery-plugin-development.html #jquery
+#jquery Avoid using .append(); inside for-loops. Use a separate variable to build the string (var s += "p";) Then use the .html(); method.
+#jquery Avoid using jQuery selectors that select many elements inside a for-loop. Keep it outside - var s = $("p"); for (..) { s.css(...); }
+#jquery You can include jquery.js directly from Google Code API (You know, using &lt;script&gt; tags on your page) - https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
+#jquery When using .addClass("cl"); make sure that the class ("cl" in this case) defines the properties it overwrites using !important
+#jquery If binding click events to multiple elements it's wise to put the .click() event inside an .each() event to prevent $(this) clashes
+jQuery CSS Selectors Tutorial -- http://www.learnjquery.org/newsletter/Tutorial-2-jquery-css-selectors-walkthrough.html #jquery
+#jquery Sometimes we need to prevent text from being selected over custom CSS UI controls -- $('body').disableSelection(); (jquery-ui.js)
+#jquery #regex Select all DIVs with id names containing letter "o" -- $("div").filter(function() { return $(this).attr("id").match(/o/); });
+#jquery $(".button")[index]; -- get JavaScript DOM object. $($(".button")[index]) -- Enable jQuery functionality to an indexed object.
+#jquery To see if a checkbox is checked - $("input#id").is(":checked"). The 'is' method return a boolean.
+#jquery Dynamically get current mouse position -- $("#target").mousemove(function(e) { x = e.pageX; y = pageY; });
+Understanding jQuery Events -- http://www.learnjquery.org/newsletter/Tutorial-3-jquery-events.html #jquery
+#jquery Check if an element is visible -- if($(element).is(":visible") == "true") { //The DOM element is visible } else { Is not invisible }
+#jquery Use the clone() method to create a clone of any DOM element -- var clone_obj = $('#something').clone();
+New JavaScript Tutorials http://www.learnjquery.org/tutorials/ #jquery
+#jquery Disable right button mouse click -- $(document).ready(function(){$(document).bind("contextmenu",function(e){return false;});});
+#jquery Loop through elements backwards -- var reversed = $("li").get().reverse(); $(reversed).each(function(){ /* Your code here */ });
+#jquery Access elements within an IFRAME -- var iframe = $("iframe#someID").contents(); var text = iframe.find(".message").text();
+A jQuery Tutorial e-Book http://www.learnjquery.org known for its easy to follow yet {in-depth} explanations #jquery
+#jquery Open external links in a new window -- $('a[rel$='external']').click(function(){this.target = "_blank";});
+#jquery If JavaScript is disabled, probably a different CSS set should be required -- if (!js_enabled) $("body").addClass("noJS");
+#jquery Performance TIP 1 -- Use for instead of each(); whenever possible.
+#jquery Performance TIP 2 -- Reference id's rather than classes (id selection is native and therefore quicker)
+#jquery Performance TIP 3 -- Limit DOM manipulation by adding elements in one big chunk rather one at a time.
+#jquery Performance TIP 4 -- Store selections in var objects for long term use throughout your application.
+#jquery Performance TIP 5 -- Take advantage of Event Delegation (http://davidwalsh.name/event-delegate)
+jQuery & Ajax Tutorial -- http://www.learnjquery.org/newsletter/Tutorial-5-jquery-ajax-http.html #jquery
+#jquery Configure jQuery to be compatible with other libraries -- var $j = jQuery.noConflict(); -- Now you can use $j("div").show();
+#jquery: To select all children (within a parent) but only after a certain element use $("div#abc").nextAll(); -- selects all after div#abc.
+#jquery: To select all next elements and the self (the selector itself) use -- $('li.third-item').nextAll().andSelf(); Selects 3rd and down.
+#jquery: In JavaScript an object can be defined and referenced on the same line using dot operator -- alert({a:1,b:2}.a); - will display "1"
+jQuery CSS Selectors Part 2 -- http://www.learnjquery.org/newsletter/Tutorial-6-more-about-css-selectors.html #jquery
+#jquery: $("div#rand").css( { position: 'absolute', left: Math.random()*100 + 'px', top: Math.random()*100 + 'px' } );
+#jquery: So, which checkbox is checked in a checkbox group? To find out, use this $("input[name='checkbox_group_name[]']:checked");
+#jquery: Find out the HTML tag name of a selected element -- $("div").get(0).tagName; -- will return "div."
+#jquery: get(0) and [0] are synonymous in jQuery. $("div")[0].tagName; and $("div").get(0).tagName; will return the same value "div."
+#jquery: DOM is deeper than you think. There are such things as node types; can refer to a piece of text or a an element type like a comment
+jQuery "Sonic" Sprite Animation -- http://www.learnjquery.org/newsletter/Tutorial-7-jquery-animation.html #jquery
+#jquery: Select all nodes of type text and wrap them in &lt;b&gt; $("p").contents().filter(function(){ return this.nodeType != 1; }).wrap("&lt;b/&gt;");
+#jquery Tutorial - jQuery UI effects library has a method called .switchClass(remove, add); -- for swapping two classes in an HTML element.
+$("div") is nothing more than a JavaScript function named "$" which is also a valid variable name. -- var $ = 1; alert($); // 1 #jquery
+#jQuery Mobile - Example: &lt;a href = "abc.html" data-transition = "flip"&gt; - transition to next page using flip animation.
+#jQuery Mobile - Add data-transition = "pop" attribute to your link, where effect is = pop,fade,flip,turn,flow,slide or none.
+If you're working with jQuery Mobile and tired of assigning data-roles all the time, try: $("section").attr("data-role", "page"); #jquery
+Here is another way to make HTML5's <footer> into a #jQuery Mobile footer: $("footer").attr("data-role","footer"); // on document.ready
+New jQuery Tutorials http://www.learnjquery.org/tutorials/ #jquery
+#jQuery Mobile - This creates a button with a star icon &lt;a href="#" data-role="button" data-icon="star"&gt;Star button&lt;/a&gt;
+#jQuery Mobile - This creates a slider: &lt;input type="range" name="slider" id="slider-0" value="25" min="0" max="100" /&gt;
+#jQuery Mobile - To start using jQuery Mobile, you will need jquery.mobile.css, jquery.mobile.js and jquery.js itself.
+#jQuery Mobile - jQuery Mobile includes ready-to-use mobile UI elements: buttons, toolbars, icons and form elements.
+#jQuery Mobile - jQuery Mobile includes a diverse set of common list-view UIs you can begin adding to your app right away.
+#jQuery Mobile - ThemeRoller is the visual designer you use to customize appearance of your app - http://jquerymobile.com/themeroller/
+#jQuery Mobile - Each page of a jQuery Mobile app is loaded dynamically using Ajax. You can choose page transition animation.
+#jQuery Mobile - Applications created with jQuery Mobile automatically scale to the device screen resolution. You just build it.
+#jQuery Mobile - Mobiscroll is a pretty good Calendar scroller plugin for mobile apps - http://demo.mobiscroll.com/
+#jQuery Mobile - Stanford University mobile website was created jQuery Mobile - http://m.stanford.edu/ Notice the custom theme.
+#jQuery Mobile - What does a jQuery Mobile website/app look like? Here is one example - http://jquerymobile.com/resource-assets/gallery/khan.jpg
+#jQuery Mobile - themes support out-of-the-box common use icons (arrows, maginifying glass, etc) that can be added to buttons
+#jQuery Mobile - the theming system uses CSS3 (like rounded corners, etc.,) color "swatches" and CSS3 gradients on UI controls
+#jQuery Mobile - use $.mobile.changePage() to programmatically change from one Ajax-based page to another.
+#jQuery Mobile - Re: "scrollstart" event - iOS devices freeze DOM access during scroll, queuing them to apply when the scroll finishes.
+#jQuery Mobile - when external page is loaded the "pagebeforeload" event is fired. Then either "pageload" or "pageloadfailed."
+#jQuery Mobile - in the same way, "vclick" will be treated as "tap" or fall back to regular "onclick" if a web browser is used.
+#jQuery Mobile - vmouseover is a new "virtual" mouse event. Falls back to in-browser mouseover or phone's mouseover equivalent.
+#jQuery Mobile - A phone has no mouse. So, forget onmouseover. New events are - tap, taphold, swipe, swipeleft, swiperight.
+#jQuery Mobile - jQuery Mobile's $(document).bind('pageinit'); is similar to $(document).ready();
+#jQuery Mobile - instead of $(document).ready(), jQuery Mobile uses Ajax to load data of each page into the DOM as you navigate.

@@ -1,0 +1,75 @@
+
+#saved_ctr { z-index: 2147483647 !important; }
+
+        body,div,p{font-size:14px;}h1,h2,p{margin:0;}h1,h2{margin-top:16px}#htmlize-log{display:inline;}
+
+        body { margin-left: 24px; margin-top: 0px; }
+
+        a { color: blue; }
+
+        /* Decide whether Editor is open by default or closed */
+        #Editor { display: none; }
+
+        .option { width: auto; display:inline; padding: 4px; }
+        .option a { color: white; }
+
+
+.hl { background:#7ac2ff !important; }
+.today { background: #fffec4; }
+.gray { background: #eee; }
+
+#Calendar { min-width: 450px; min-height: 400px; font-family: Arial,sans-serif; font-weight: normal; }
+#Day { position: absolute; width: 450px; height: 400px; clip: rect(0px, 450px, 400px, 0px); border: 0; }
+#Day365 { position: relative; margin-top:4px; min-width: 5450px; height: 400px; background: transparent;text-align: left;border: 0; }
+.Month365 { position: absolute; width: 452px !important; min-height: 400px; background: transparent; }
+.day { cursor:pointer; font-family: Verdana,sans-serif; font-size: 10px !important;position: relative; display: block; width: 61.4px; height: 61.4px; margin-right: 1px; border: 1px solid #ddd; float: left; margin-top:1px }
+.day:hover { border:1px solid #0000ff; }
+#Y { width: 450px !important; }
+#Y b { font-family:Arial,sans-serif; font-size: 12px; font-weight:normal; display: block; min-width: 44px; text-align: center; float: left; background: #c6e3f7; cursor: pointer; padding:3px; }
+#M { width: 450px!important; ; }
+#M b { font-family:Arial,sans-serif; font-size: 12px; font-weight:normal;  display: block; min-width: 35.5px; text-align: center; float: left; background: #c6e3f7; cursor: pointer;  padding: 1px; color: gray; }
+#Y b:hover,
+#M b:hover { background:#7ac2ff; }
+#M { margin-bottom: 1px; }
+.sep { clear:both; width: 450px; display:block; height: 2px; background:#7ac2ff }
+.sep2 { clear:both; width: 450px; display:block; height: 1px; background:#fff; }
+#Week { width: 451px; height: 16px; }
+#Week b { padding-top:3px;padding-bottom:3px;display: block; min-width: 61.4px; text-align: center; float: left; font-weight: normal; font-family: Verdana,Arial, sans-serif; font-size: 9px; background: #eee; margin-right: 1px; border: 1px solid #ddd; }
+#Week b:nth-child(6) { color: red; }
+#Week b:nth-child(7) { color: red; }
+.day .sc { position: absolute; top: 16px; left: 4px; font-family:Verdana,sans-serif; font-size:10px !important; color: gray;}
+.day .sc span {font-family:Verdana,sans-serif; font-size:10px !important; color: gray;}
+.Scheduled { background: #daffe4 !important; }
+#Add { display: none; position: absolute; top:4px; left:0; width: 450px; height: 320px; background: gray; z-index: 100; }
+#ThankYou { display: none; position: absolute; top:4px; left:0; width: 450px; height: 320px; background: gray; z-index: 200; }
+#CalList { position: absolute; top:4px; left:0; width: 450px; height: 320px; background: gray; z-index: 300; display:none; }
+#CalItem { position: absolute; top:4px; left:0; width: 450px; height: 320px; background: gray; z-index: 400; display:none; }
+#CalChooseArticle { position: absolute; top:4px; left:0; width: 450px; height: 320px; background: gray; z-index: 500; display: none;  }
+.P { color: white; padding: 10px; }
+.AddTitle { width: 450px; height: 44px; background: #555; }
+.calItemCloseButton,
+.calListCloseButton,
+.calThankYouCloseButton,
+.calAddCloseButton { position: absolute; top:0; right:0; width: 42px; height: 42px; background: url(../calendar/close.png) no-repeat; cursor:pointer; }
+.AddTitle table td { font-size: 12px; color: white; }
+.AddTitle table td:nth-child(2) {text-align:right;}
+.AddTitle input { border:0; padding:4px; border-radius: 3px; width: 210px; }
+
+.ListButton { position: absolute; top:0; left: 355px; width:57px; height: 44px; background:url("../calendar/cal_list_1.png") no-repeat; cursor:pointer; }
+.ListButton:hover { background:url("../calendar/cal_list_2.png") no-repeat; }
+
+#CalList table td { vertical-align: top; }
+#CalList table td:nth-child(1) { color:#aaa }
+#CalList table td,
+#CalList table td b { font-family:Verdana,sans-serif; font-size: 11px; text-align:left;}
+#CalList table td a { color: #9ce2ff; text-shadow: 0 0 3px #555; font-family:Verdana,sans-serif; font-size: 11px; text-align:left;}
+#CalList table td b { color: silver; }
+
+#CalList table td { border-bottom: 1px dashed #555}
+
+.ClockPoint { cursor:pointer; position: absolute; width:10px; height:10px; background: yellow; border:3px outset yellow; border-radius:10px; }
+.ClockPoint:hover {  border-style: inset; }
+.ClockPoint .ClockOn { border-style: inset; }
+.ClockPoint.Set { border: 3px outset #00aa60; background: #00aa60; }
+
+.SchPast { background: #fff url('../Images/sentbg.png'); }

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <title>Layout 1</title>
+    <meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
+    <script src = 'jquery.js' type = 'text/javascript'></script>
+    <script src = 'ui.js' type = 'text/javascript'></script>
+	<script src = 'layout.js' type = 'text/javascript'></script>
+    <link rel = 'stylesheet' type = 'text/css' href = 'layout1.css' />
+    <script type = "text/javascript">
+
+    </script>
+</head>
+<body>
+<style type = "text/css">
+.image { cursor: pointer; }
+.image:hover { border: 1px solid red; }
+#current a { color: white; text-decoration:none; font-family:Verdana; font-size: 15px; }
+</style>
+<div id = "Box">
+    <div id = "Contact"></div>
+	<div id = "Main">
+	    <h1 style = "font-size: 17px;">Browse Art Gallery &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style = "color:#9999FF;">Press "F11" for full screen.</span></h1>
+	    <p>&nbsp;</p>
+		
+		<b class = "year">2014</b>
+		
+        <div class = "image"><img src = "gallery25.jpg"></div>
+		
+		<b class = "year">2013</b>
+		
+		<div class = "image"><img src = "gallery5.jpg"></div>
+		<div class = "image"><img src = "gallery1.jpg"></div>
+		<div class = "image"><img src = "gallery2.jpg"></div>
+		<div class = "image"><img src = "gallery27.jpg"></div>
+		<div class = "image"><img src = "gallery3.jpg"></div>
+		<div class = "image"><img src = "gallery4.jpg"></div>
+		<div class = "image"><img src = "gallery6.jpg"></div>
+		<div class = "image"><img src = "gallery7.jpg"></div>
+		<div class = "image"><img src = "gallery8.jpg"></div>
+		<div class = "image"><img src = "gallery9.jpg"></div>
+		<div class = "image"><img src = "gallery11.jpg"></div>
+		<div class = "image"><img src = "gallery12.jpg"></div>
+		<div class = "image"><img src = "gallery13.jpg"></div>
+		<div class = "image"><img src = "gallery14.jpg"></div>
+		<div class = "image"><img src = "gallery15.jpg"></div>
+		<div class = "image"><img src = "gallery16.jpg"></div>
+		<div class = "image"><img src = "gallery17.jpg"></div>
+		<div class = "image"><img src = "gallery18.jpg"></div>
+		<div class = "image"><img src = "gallery19.jpg"></div>
+		<div class = "image"><img src = "gallery20.jpg"></div>		
+		<div class = "image"><img src = "gallery21.jpg"></div>
+		<div class = "image"><img src = "gallery22.jpg"></div>
+		<div class = "image"><img src = "gallery23.jpg"></div>	
+		
+		<div id = "Bottom" class = "clear">&copy; 2014 <a href = "http://www.gregswebdesign.net/">Web Design by Greg</a></div>
+		
+	</div>
+    <div id = "Header">
+	    <div id = "Logo"><h1><i>Logo</i></h1></div>
+		<div id = "Slogan"><i>Welcome to my art gallery. I hope you like my paintings.</i></div>
+		<div class = "clear"></div>
+	</div>
+    <div id = "Navigation">
+	    <ul>
+		    <li><a href = "#">Home</a></li>
+			<li><a href = "#">Paintings</a></li>
+			<li><a href = "#">Photography</a></li>
+			<li><a href = "#">Poetry</a></li>
+			<li><a href = "#">About</a></li>
+			<li><a href = "#">Contact</a></li>
+		</ul>
+	</div>
+	<div style = "width: 200px">
+	<p><b>Light</b> is the central focus of creating paintings because <b>light</b> is what gives life to an image.</p>
+	</div>
+    <div id = "Footer">&copy; 2014 greg sidelnikov.</div>
+	<div id = "viewer">
+	    <div id = "current">
+		<p><h1><a href = "#" onclick = "$('#viewer').fadeOut(300);">Close</a> &nbsp; <a href = "#" onclick = "prev()">Prev</a> &nbsp; <a href = "#" onclick = "next()">Next</a></h1></p>
+		<table>
+		<tr>
+		<td>
+		<img/>
+		</td>
+		<td style = "text-align: left; vertical-align: top;"><b>Dream</b>
+		<p>I dreamed of a dreaming cat.<br/>
+		I saw him just in front of me.</br>
+		</p>
+		</td>
+		</tr>
+		</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>

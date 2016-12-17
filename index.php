@@ -42,6 +42,12 @@
     </script>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <script type = "text/javascript">
+
+		function CreateGame() {
+			$("#GameList").hide();
+			$("#CreateGame").show();
+		}
+
 		function ToggleSidebar() {
 
 			if (window.sidebar == "true") {
@@ -86,13 +92,14 @@
 	    });
     </script>
     <style type = "text/css">
+
     body { font-family: Arial, sans-serif; font-size: 12px; margin: 0; padding: 0; background: #f1f1f1; }
     #Header { height: 48px; background: #fff; border-bottom: 1px solid #e8e8e8; }
     .GameInfo { margin: 16px; margin-bottom: 8px; width: 200px; height: 190px; border: 0; float: left; }
     #MenuOptions { width: 500px; margin: auto; }
     .MenuOption { width: 75px; height: 28px; line-height: 24px; float: left; margin-left: 10px; margin-right: 10px; text-align: center; }
     .MenuOption { border-bottom: 3px solid transparent; }
-    .MenuOption.Selected { border-bottom: 3px solid orange; }
+    .MenuOption.Selected { border-bottom: 3px solid #a1dc00; }
 	.gamedesc { font-size: 11px; position: relative; font-family: Arial, sans-serif; }
 	.gameinfo { font-size: 11px;  }
 	.GameInfo a { color: #2388de; text-decoration: none; }
@@ -111,7 +118,13 @@
 
 	.icon { display: inline-block; width: 16px; height: 16px; border: 1px solid #ddd; vertical-align: middle; margin-top:-3px; margin-left: 6px; margin-right: 8px; }
 
-		a { color: #2388de;  }
+	a { color: #2388de;  }
+
+	#CreateGame { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+
+	.block { padding: 16px; }
+	.block-100 { width: 100px; display: inline-block; }
+	.block-500 { width: 450px; display: inline-block; }
 
     </style>
 </head>
@@ -125,7 +138,7 @@
 	<div id = "Navigation">
 		<div style = "width: 300px; margin: 0 auto">
 			<div class = "MenuOption Selected">Browse</div>
-			<div class = "MenuOption" style = "min-width: 120px;">Create My Own Game</div>
+			<div class = "MenuOption" style = "min-width: 120px;" onclick = "CreateGame();">Create My Own Game</div>
 			<?php /* <div class = "MenuOption">Popular</div> */ ?>
 		</div>
 	</div>
@@ -136,28 +149,68 @@
 		<div class = "sb-opt"><div class = "icon"></div> Analytics</div>
 		<div class = "sb-opt"><div class = "icon"></div> Contact</div>
 	</div>
-	
+
+	<div id = "CreateGame">
+
+		<div class = "block">
+			<b>Register Free Game Painter Account</b>
+		</div>
+
+		<div class = "block">
+			<p>To start making games you need a Game Painter account. This will enable you to:</p>
+			<ul>
+				<li>Use Game Painter software to make your game right in your browser.</li>
+				<li>Publish your game for free at <span style = "color: blue">http://www.gamepainter.com/yourgamename</span></li>
+				<li>Compete with other game developers, receive feedback from players and share your game with friends!</li>
+			</ul>
+
+		</div>
+
+		<div class = "block">
+			<div class = "block-100">Email Address</div>
+			<div class = "block-500"><input type = "text"/></div>
+		</div>
+
+		<div class = "block">
+			<div class = "block-100">Username</div>
+			<div class = "block-500"><input type = "text"/></div>
+		</div>
+
+		<div class = "block">
+			<div class = "block-100">Password</div>
+			<div class = "block-500"><input type = "text"/></div>
+		</div>
+
+		<div class = "block">
+			<div class = "block-100">Password Again</div>
+			<div class = "block-500"><input type = "text"/></div>
+		</div>
+
+		<div class = "block">
+			<p>Status of your registration: awaiting information.</p>
+		</div>
+
+		<div class = "block">
+			<div class = "block-100"></div>
+			<div class = "block-500"><input type = "button" value = "Register"/></div>
+		</div>
+
+	</div>
+
 	<div id = "GameList">
-	
 		<div style = "padding: 16px;"><b>Game Painter</b> is free online 2D game maker software that you can use to <a href = "#">create your own game</a>, share it with your friends or browse and play games created by others.</div>
-	
 		<div class = "GameInfo">
-
-			<img src = "http://www.gamepainter.net/make-game.png" alt = "Add Game - Make Your Own Game"/>
-
-
+			<img src = "http://www.gamepainter.net/make-game.png" alt = "Add Game - Make Your Own Game" onclick = "CreateGame();"/>
 			<?php /* <b><a href = "http://www.gamepainter.net/fFJKHD86vh2461">Make Your Own Game</a></b> */ ?>
 			<div class = "gamedesc">Create your own 2D game, publish it for free on Game Painter and invite friends to play it.</div>
 			<div class = "gamestat">0 plays - now</div>
 		</div>
-
 		<?php include("gameblock.php"); ?>
 		<?php include("gameblock.php"); ?>
 		<?php include("gameblock.php"); ?>
-
 		<div style = "clear: both"></div>
-
 	</div>
+
 
 	<div id = "Footer" style = "text-align: center; font-size: 11px; color: gray;">
 		<p>&copy; 2016 Game Painter, developed by <a href = "http://www.tigrisgames.com/" title = "indepedenent game development studio">Tigris Games</a></p>

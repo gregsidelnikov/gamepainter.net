@@ -1,0 +1,60 @@
+    #Editor input[type="text"] { font-family: Arial, sans-serif; font-size: 14px; padding-left: 4px; }
+    #Editor input:focus, select:focus, textarea:focus, button:focus { outline: none; }
+    #Editor div.InputName { width: 155px; background: #dddddd; color: gray; float: left; height: 24px; line-height: 14px;  }
+    #Editor div.InputName p { font-family: Verdana, Arial, sans-serif; text-align:right; font-size: 10px !important; display: block; position: relative; padding: 0px; margin: 4px; font-weight: bold;}
+    #Editor div.InputValue { width: 475px; background: #dddddd; color: gray; float: left; height: 24px; }
+    #Editor div.InputValue input { width: 460px; padding:3px;font-size: 11px !important; border: 1px solid #dedede; border-top:0; height: 16px !important; }
+    #Editor div.LineBreak { clear:both; }
+    #Editor textarea#text-editor { min-height: 900px; border: 0; }
+    #EditPage { position: absolute; border: 0; width: 630px; height: 335px; clip: rect(0px,630px,335px,0px); }
+    #EditPage { z-index: 10000; }
+    #EditPage textarea#article { width: 600px; min-height: 800px; font-family: Arial, sans-serif; font-size: 12px; padding: 8px; }
+    #Queue {
+        position: absolute;
+        top: 16px;
+        right: 8px;
+        width: 240px;
+        min-height: 50px;
+        border: 0;
+    }
+
+    #QueueOptions { position: relative; margin:0 auto; top: 32px; right: 32px; width: 300px; min-height: 100px;  }
+    .ArticleTab a:hover { }
+    #Editor {  }
+    #html-preview p { margin-bottom: 14px; line-height: 16px; }
+    #dragup { z-index: 10000; position: absolute; top: 230px; left: 24px; width: 630px; height: 25px; text-align: center; background: #dedede; cursor: n-resize; }
+    textarea#javascript { min-height: 45px; border: 0; }
+    textarea#css{ min-height: 45px; border: 0; }
+    
+    body { background: #eee; }
+    #html-preview { margin-top: 10px; background: #fff; border:0 !important; box-shadow: 0 0 5px #777; border-radius: 5px;}
+    #text-editor { background: #eee; border:0; }
+
+/* Day time */
+
+    body #sun-ic div.smode { background: url('../Images/sun-ic.png') !important; }
+    body #moon-ic div.smode { background: url('../Images/moon-ic.png') !important; }
+
+/* Night time */
+
+    body.night,
+    body.night * { background: black !important; color: #ccc !important; }
+
+    body.night #VerticalPane { background: #222 !important; }
+    body.night #dragup { background: #222 !important; }
+
+    body.night #sun-ic div.smode { background: url('../Images/sun-ic-1.png') !important; }
+    body.night #moon-ic div.smode { background: url('../Images/moon-ic-1.png') !important; }
+
+    body.night input[type=text] { border: 1px solid gray !important; height:8px; }
+
+    /* preview border */
+    body.night #html-preview { border: 1px solid #555 !important; }
+
+    #get_plain_html_btn { background: #555 !important; color: pink; border:0; }
+    #schedule_btn { background: #555 !important; color: pink; border:0; }
+
+    body.night #VerticalPane:hover { background: #ddd url(drag.png) !important; }
+    body.night #dragup:hover { background: #ddd url(drag.png) !important; }
+
+    .redBorder { border:1px solid red !important; }

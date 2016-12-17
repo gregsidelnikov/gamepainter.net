@@ -1,0 +1,72 @@
+<rss version="0.91">
+<channel>
+<title>--- RSS Feed</title>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner</link>
+    <description>--- News</description>
+    <language>en-us</language>
+    <copyright>Copyright 2006-2014 ---</copyright>
+    <docs>http://localhost/perforce/tigris_wspace_4175/bladerunner/rss/news.xml</docs>
+    <lastBuildDate>7, Dec 2014 17:55:48 PST</lastBuildDate>
+    <image>
+    <title>--- News</title>
+    <url>http://localhost/perforce/tigris_wspace_4175/bladerunner/Images/rss-feed-logo.png</url>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner</link>
+    </image>
+<item>
+    <title>Ludovics Lyre 3</title>
+    <description>meta</description>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner/blog/ludovics-lyre.html</link>
+    <author>greg.sidelnikov@gmail.com</author>
+    <pubDate>3, Dec 2014 20:25:23 PST</pubDate>
+    <guid isPermaLink="false">ludovics-lyre.html</guid>
+</item>
+<item>
+    <title>Futuria</title>
+    <description>meta</description>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner/blog/futuria.html</link>
+    <author>greg.sidelnikov@gmail.com</author>
+    <pubDate>3, Dec 2014 20:16:20 PST</pubDate>
+    <guid isPermaLink="false">futuria.html</guid>
+</item>
+<item>
+    <title>I'm back</title>
+    <description>meta</description>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner/blog/im_back.html</link>
+    <author>greg.sidelnikov@gmail.com</author>
+    <pubDate>3, Dec 2014 7:48:04 PST</pubDate>
+    <guid isPermaLink="false">im_back.html</guid>
+</item>
+<item>
+    <title>email 1 test</title>
+    <description>meta</description>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner/nodir/email_1_test.html</link>
+    <author>greg.sidelnikov@gmail.com</author>
+    <pubDate>2, Dec 2014 12:24:58 PST</pubDate>
+    <guid isPermaLink="false">email_1_test.html</guid>
+</item>
+<item>
+    <title>This is a newer blog</title>
+    <description>meta</description>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner/blog/draft-dc88.0205336259678.html</link>
+    <author>greg.sidelnikov@gmail.com</author>
+    <pubDate>2, Dec 2014 9:08:51 PST</pubDate>
+    <guid isPermaLink="false">draft-dc88.0205336259678.html</guid>
+</item>
+<item>
+    <title>Untitled Page</title>
+    <description>meta</description>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner/webpage/draft-ab28.49266219418496.html</link>
+    <author>greg.sidelnikov@gmail.com</author>
+    <pubDate>2, Dec 2014 8:16:29 PST</pubDate>
+    <guid isPermaLink="false">draft-ab28.49266219418496.html</guid>
+</item>
+<item>
+    <title>About Tornado PHP Framework</title>
+    <description>about</description>
+    <link>http://localhost/perforce/tigris_wspace_4175/bladerunner/webpage/about.html</link>
+    <author>greg.sidelnikov@gmail.com</author>
+    <pubDate>12, Jun 2014 22:53:35 PDT</pubDate>
+    <guid isPermaLink="false">about.html</guid>
+</item>
+</channel>
+</rss>

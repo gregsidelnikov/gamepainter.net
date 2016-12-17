@@ -1,0 +1,21 @@
+body { background: #000000 url(""); color: #ffffff; }
+#Box { position: relative; width: auto; /*margin: auto 0;*/ }
+#Header { ; }
+#Navigation { ; }
+#Logo { float: left; width: 180px; height: 75px; border: 1px solid gray; text-align: center; line-height: 28px; }
+#Slogan { float: left; width: 500px; height: 75px; line-height: 75px; margin-left: 16px; }
+#Main { position: absolute; top: 80px; left: 250px; }
+.clear { clear:both }
+.image { width: 180px; height: 90px; border: 1px solid #333; }
+div.image { width: 120px; float: left; margin: 16px; text-align: center; padding-top: 8px;}
+div.image img { width: 100px; height: 90%; opacity: 0.8; }
+#viewer { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; text-align: center; padding-top: 80px; background:black;}
+#viewer #current { position: relative; width: 777px; margin-top: -200px; margin: 0 auto; }
+#viewer #current table { width: 0 auto; width: 810px; }
+.year { display:block; clear:both; height: 32px; border-bottom: 1px solid #333; color: gray; }
+#Navigation ul li a { color: #9999FF; font-weight: bold; }
+#Navigation ul li a:hover { color: orange; }
+#Contact { position: fixed; font-size: 12px; font-family: Verdana, Arial, sans-serif; right: 0px; top: 0px; width: 180px; height: 80px; border: 1px solid #333; padding: 8px; }
+#Contact a { color: #9999FF; font-weight: bold; }
+#Bottom { font-family: Verdana; font-size: 11px; }
+#Bottom a { color: #9999FF; }
