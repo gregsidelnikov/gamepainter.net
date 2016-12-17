@@ -16,11 +16,11 @@
 <meta property="og:url" content="http://www.learnjquery.org/homepage/draft-dge1380.0162756006573.html"/>
 <meta property="og:image" content="http://www.learnjquery.org/Images/tutorial-article.png"/>
 <meta property="og:site_name" content=""/> */ ?>
-<meta property="fb:admins" content="gregsidelnikov"/>
-<script src = 'js/jquery.js' type = 'text/javascript'></script>
-<script src = 'js/ui.js' type = 'text/javascript'></script>
+<meta property="fb:admins" content="gregsidelnikov" />
+<script src = '<?php print $URL; ?>/js/jquery.js' type = 'text/javascript'></script>
+<script src = '<?php print $URL; ?>/js/ui.js' type = 'text/javascript'></script>
 <?php /* <script src = 'js/script.js' type = 'text/javascript'></script> */ ?>
-<link rel = 'stylesheet' type = 'text/css' href = 'css/style.css' />
+<link rel = 'stylesheet' type = 'text/css' href = '<?php print $URL; ?>/css/style.css' />
     <script type = "text/javascript">
         /* Create global website's object */
         window.w = 0; // responsive width
@@ -30,20 +30,13 @@
         website.bs_ip = '65.24.43.194';
         website.this_ip = '2600:3c01::f03c:91ff:feae:69f9';
         website.admin = 0;</script>
-	<script src = 'js/script.js' type = 'text/javascript'></script>
+	<script src = '<?php print $URL; ?>/js/script.js' type = 'text/javascript'></script>
     <script type = "text/javascript">
-        /* Custom JavaScript */
+        /* custom javascript */
     </script>
-<style type="text/css"></style>
-<?php /* ?><base href = "http://www.gamepainter.net" target="_blank"> <?php */ ?>
 </head>
-    <script type = "text/javascript">
-		/* Template custom parameters */
-    </script>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <script type = "text/javascript">
-    </script>
     <style type = "text/css">
+		/* custom css */
     </style>
 </head>
 <body>
@@ -57,7 +50,7 @@
 	<div id = "Navigation">
 		<div style = "width: 600px; margin: 0 auto">
 			<div id = "browse"   ui = "#GameList"   class = "MenuOption Selected" onclick = "view(this)">Browse</div>
-			<div id = "register" ui = "#CreateGame" class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Register</div>
+			<div id = "register" ui = "#RegisterAccount" class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Register</div>
 			<div id = "login"    ui = "#Login"    class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Login</div>
 		</div>
 	</div>
@@ -116,7 +109,7 @@
 		</div>
 	</div>
 
-	<div id = "CreateGame">
+	<div id = "RegisterAccount">
 
 		<div class = "block">
 			<b>Register Free Game Painter Account</b>
@@ -163,19 +156,7 @@
 
 	</div>
 
-	<div id = "GameList">
-		<div style = "padding: 16px;"><b>Game Painter</b> is free online 2D game maker software that you can use to <a href = "#">create your own game</a>, share it with your friends or browse and play games created by others.</div>
-		<div class = "GameInfo">
-			<img src = "http://www.gamepainter.net/make-game.png" alt = "Add Game - Make Your Own Game" onclick = "CreateGame();"/>
-			<?php /* <b><a href = "http://www.gamepainter.net/fFJKHD86vh2461">Make Your Own Game</a></b> */ ?>
-			<div class = "gamedesc">Create your own 2D game, publish it for free on Game Painter and invite friends to play it.</div>
-			<div class = "gamestat">0 plays - now</div>
-		</div>
-		<?php include("gameblock.php"); ?>
-		<?php include("gameblock.php"); ?>
-		<?php include("gameblock.php"); ?>
-		<div style = "clear: both"></div>
-	</div>
+	<?php include("gamelist.php"); ?>
 
 	<div id = "Footer" style = "text-align: center; font-size: 11px; color: gray;">
 		<p>&copy; 2016 Game Painter, developed by <a href = "http://www.tigrisgames.com/" title = "indepedenent game development studio">Tigris Games</a></p>

@@ -27,7 +27,9 @@ a { color: #2388de;  }
 
 #username { text-transform: lowercase; }
 
-#CreateGame { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+/* #CreateGame { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; } */
+
+#RegisterAccount { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
 
 #Login { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
 
@@ -39,5 +41,5 @@ a { color: #2388de;  }
 
 .MenuOption:hover { border-bottom: 3px #a1dc00 solid; }
 
-#Register, #CreateGame, #Login, #LaunchGamePainter { display:none; }
+#Register, #RegisterAccount, #Login, #LaunchGamePainter { display:none; }
 

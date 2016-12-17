@@ -2,7 +2,7 @@ function view(id) {
     $(".MenuOption").removeClass("Selected");
     var idd = $(id).attr("id");
     var uid = $(id).attr("ui");
-    $("#Browse, #CreateGame, #Register, #Login").hide();
+    $("#Browse, #RegisterAccount, #Login").hide();
     $($(id).attr("id")).addClass("Selected");
     $(uid).show();
 }
