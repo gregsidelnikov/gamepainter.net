@@ -71,6 +71,7 @@
 			} } );
 		}
 		function UpdateUserUI(msg) {
+			if (msg == null) msg = 0;
 			if (msg != 0 && msg.length > 8) {
 				$("#loggedin_email").show();
 				$("#loggedin_email").text(localStorage.getItem('email'));
@@ -170,6 +171,7 @@
 			}
 		}
 		function Sidebar() {
+			console.log("window.sidebar=" + window.sidebar);
 			$('body').removeClass("Sidebar");
 			window.sidebar = localStorage.getItem('sidebar');
 			if (window.sidebar == "true") {
