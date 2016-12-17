@@ -41,28 +41,12 @@
     </style>
 </head>
 <body>
-	<div id = "Header">
-	    <img src = "http://www.gamepainter.net/grid.png" alt = "menu" onclick = "ToggleSidebar()" style = "cursor: pointer;" />
-        <img src = "http://www.gamepainter.net/game-painter-logo.png" style = "margin-top: 5px;" alt = "Game Painter Logo"/>
-		<img src = "http://www.gamepainter.net/userpic.png" alt = "user" style = "opacity: 0.5; position: absolute; top: 11px; right: 10px; border: 2px solid #333; border-radius: 777px;" />
-		<div style = "position: absolute; top: 20px; right: 50px; width: auto; text-align: right;"><b style = "color:#88c000;" id = "loggedin_status"></b> <span id = "loggedin_email"></span></div>
-	</div>
 
-	<div id = "Navigation">
-		<div style = "width: 600px; margin: 0 auto">
-			<div id = "browse"   ui = "#GameList"   	 class = "MenuOption Selected" 		onclick = "view(this)">Browse</div>
-			<div id = "register" ui = "#RegisterAccount" class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Register</div>
-			<div id = "login"    ui = "#Login"    		 class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Login</div>
-		</div>
-	</div>
+	<?php include("header.php"); ?>
 
-	<div id = "Sidebar" style = "position: absolute; top: 89px; left: 0; width: 180px; height: 100%; background: white;">
-		<div class = "sb-opt" onclick = "location.href='<?php print $URL; ?>'"><div class = "icon"></div> Home</div>
-		<div class = "sb-opt"><div class = "icon"></div> My Games</div>
-		<div class = "sb-opt"><div class = "icon"></div> Analytics</div>
-		<div class = "sb-opt"><div class = "icon"></div> Contact</div>
-		<div class = "sb-opt" onclick = "LogOut()" id = "logout_button"><div class = "icon"></div> <b>Log Out</b></div>
-	</div>
+	<?php include("navigation.php"); ?>
+
+	<?php include("sidebar.php"); ?>
 
 	<div id = "Login">
 
