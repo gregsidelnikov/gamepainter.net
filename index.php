@@ -291,7 +291,7 @@
 
 		<div class = "block">
 			<div class = "block-100">Password</div>
-			<div class = "block-500"><input type = "text" name = "login_password" id = "login_password"/></div>
+			<div class = "block-500"><input type = "password" name = "login_password" id = "login_password"/></div>
 		</div>
 
 		<div class = "block">
