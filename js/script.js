@@ -3,8 +3,8 @@ function view(id) {
     var idd = $(id).attr("id");
     var uid = $(id).attr("ui");
     $("#Browse, #RegisterAccount, #Login").hide();
-    $($(id).attr("id")).addClass("Selected");
     $(uid).show();
+    $("#" + $(id).attr("id")).addClass("Selected");
 }
 function ValidateEmail( email ) {
     if( /(.+)@(.+){2,}\.(.+){2,}/.test( email ) ){ return true; } else { return false; }

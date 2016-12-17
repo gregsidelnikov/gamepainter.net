@@ -49,9 +49,9 @@
 
 	<div id = "Navigation">
 		<div style = "width: 600px; margin: 0 auto">
-			<div id = "browse"   ui = "#GameList"   class = "MenuOption Selected" onclick = "view(this)">Browse</div>
+			<div id = "browse"   ui = "#GameList"   	 class = "MenuOption Selected" 		onclick = "view(this)">Browse</div>
 			<div id = "register" ui = "#RegisterAccount" class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Register</div>
-			<div id = "login"    ui = "#Login"    class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Login</div>
+			<div id = "login"    ui = "#Login"    		 class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Login</div>
 		</div>
 	</div>
 
@@ -122,7 +122,6 @@
 				<li>Publish your game for free at <span style = "color: gray">http://www.gamepainter.com/<b>jkD35sfai</b></span> (unique game identifier)</li>
 				<li>Compete with other game developers, receive feedback from players and share your game with friends!</li>
 			</ul>
-
 		</div>
 
 		<div class = "block">
