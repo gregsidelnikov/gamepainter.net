@@ -20,7 +20,7 @@
 <script src = 'js/jquery.js' type = 'text/javascript'></script>
 <script src = 'js/ui.js' type = 'text/javascript'></script>
 <?php /* <script src = 'js/script.js' type = 'text/javascript'></script> */ ?>
-<link rel = 'stylesheet' type = 'text/css' href = 'http://www.gamepainter.net/css/style.css' />
+<link rel = 'stylesheet' type = 'text/css' href = 'css/style.css' />
     <script type = "text/javascript">
         /* Create global website's object */
         window.w = 0; // responsive width
@@ -34,11 +34,7 @@
     <script type = "text/javascript">
         /* Custom JavaScript */
     </script>
-<style type="text/css">
-	#username {
-		text-transform: lowercase;
-	}
-</style>
+<style type="text/css"></style>
 <?php /* ?><base href = "http://www.gamepainter.net" target="_blank"> <?php */ ?>
 </head>
     <script type = "text/javascript">
@@ -46,51 +42,8 @@
     </script>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <script type = "text/javascript">
-
     </script>
     <style type = "text/css">
-
-    body { font-family: Arial, sans-serif; font-size: 12px; margin: 0; padding: 0; background: #f1f1f1; }
-    #Header { height: 48px; background: #fff; border-bottom: 1px solid #e8e8e8; }
-    .GameInfo { margin: 16px; margin-bottom: 8px; width: 200px; height: 190px; border: 0; float: left; }
-    #MenuOptions { width: 500px; margin: auto; }
-    .MenuOption { width: 75px; height: 28px; line-height: 24px; float: left; margin-left: 10px; margin-right: 10px; text-align: center; }
-    .MenuOption { border-bottom: 3px solid #ddd; cursor: pointer; }
-    .MenuOption.Selected { border-bottom: 3px solid #a1dc00; }
-	.gamedesc { font-size: 11px; position: relative; font-family: Arial, sans-serif; }
-	.gameinfo { font-size: 11px;  }
-	.GameInfo a { color: #2388de; text-decoration: none; }
-	#Navigation { background: white; width: 100%; height: 31px; margin: 0 auto; position: relative; padding-top: 8px; }
-	.gamestat { margin-top: 3px; font-size: 11px; font-family: Arial; color: #777; }
-    #GameList { position: relative;  margin: 32px; height: auto; background: #fff; }
-
-	#Sidebar { display: none; }
-	.sb-opt { cursor: pointer; padding: 5px; height: 30px; line-height: 32px; border-bottom: 1px solid #ddd; color: gray; }
-	.sb-opt:hover { background: #555; color: white; }
-
-	body.Sidebar #GameList { margin-left: 200px; }
-	body.Sidebar #Sidebar { display: block !important; }
-
-	#Footer a { color: gray; }
-
-	.icon { display: inline-block; width: 16px; height: 16px; border: 1px solid #ddd; vertical-align: middle; margin-top:-3px; margin-left: 6px; margin-right: 8px; }
-
-	a { color: #2388de;  }
-
-	#CreateGame { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
-
-	#Login { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
-
-	#LaunchGamePainter { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
-
-	.block { padding: 16px; }
-	.block-100 { width: 100px; display: inline-block; }
-	.block-500 { width: 450px; display: inline-block; }
-
-	.MenuOption:hover { border-bottom: 3px #a1dc00 solid; }
-
-		#Register, #CreateGame, #Login, #LaunchGamePainter { display:none; }
-
     </style>
 </head>
 <body>
@@ -104,8 +57,7 @@
 	<div id = "Navigation">
 		<div style = "width: 600px; margin: 0 auto">
 			<div id = "browse"   ui = "#GameList"   class = "MenuOption Selected" onclick = "view(this)">Browse</div>
-			<div id = "create"   ui = "#CreateGame"   class = "MenuOption" style = "min-width: 120px;" onclick = "view(this);">Create New Game</div>
-			<div id = "register" ui = "#Register" class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Register</div>
+			<div id = "register" ui = "#CreateGame" class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Register</div>
 			<div id = "login"    ui = "#Login"    class = "MenuOption" style = "width: 65px;" onclick = "view(this)">Login</div>
 		</div>
 	</div>

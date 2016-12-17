@@ -100,7 +100,7 @@ function RegisterUser() {
         },
         "method" : "post",
         success: function(msg) {
-            $("#msg").html('ret='+msg);
+            $("#msg").html(msg);
             $("#register_button").prop("disabled", false);
         }
     } );
