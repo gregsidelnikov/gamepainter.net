@@ -1,0 +1,9 @@
+RewriteEngine on
+rewriteBase /
+
+# rewrite all no-www to www
+RewriteCond %{HTTP_HOST} ^gamepainter.net$ [NC]
+RewriteRule ^(.*)$ http://www.gamepainter.net/$1 [L,R=301]
+
+# account verification page
+RewriteRule ^verify/([A-Za-z0-9]*)$ ajax/verify.php?code=$1

@@ -1,3 +1,4 @@
+<?php include("Migration/Composition.php"); ?>
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -24,7 +25,7 @@
         /* Create global website's object */
         window.w = 0; // responsive width
         window.website = new Object();
-        website.url = 'http://www.gamepainter.net';
+		website.url = '<?php print $URL; ?>';
         website.img_dir_name = 'Images';
         website.bs_ip = '65.24.43.194';
         website.this_ip = '2600:3c01::f03c:91ff:feae:69f9';
@@ -33,30 +34,82 @@
         /* Custom JavaScript */
     </script>
 <style type="text/css">
-
+	#username {
+		text-transform: lowercase;
+	}
 </style>
-<base href = "http://www.gamepainter.net" target="_blank">
+<?php /* ?><base href = "http://www.gamepainter.net" target="_blank"> <?php */ ?>
 </head>
     <script type = "text/javascript">
 		/* Template custom parameters */
     </script>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <script type = "text/javascript">
-
+		function ValidateEmail( email ) {
+			if( /(.+)@(.+){2,}\.(.+){2,}/.test( email ) ){ return true; } else { return false; }
+		}
+		function ValidateUsername( username ) {
+			if( /^[a-zA-Z][a-z\.A-Z\-]+$/.test( username ) ) { return true; } else { return false; }
+		}
+		function SignIn() {
+			var email = $("#login_email_address").val();
+			var pass = $("#login_password").val();
+			$("#signin_button").prop("disabled", true);
+			$.ajax( { "url" : website.url + "/ajax/login.php",
+				"data" : {
+					"email" : email,
+					"password" : pass,
+				},  "method" : "post",
+				success: function(msg) {
+					//console.log(msg);
+					if (msg == 0) {
+						$("#msg").html('No such email and password combination. Note, your account must be verified in order to validate a sign in attempt.');
+						$("#register_button").prop("disabled", false); }
+					else  if (msg == 1) $("#msg").html('You\'ve successfully logged in. Go make games now! <a href = "<?php print $URL; ?>/create">Create New Game</a>');  else $("#msg").html(msg);
+				}
+			});
+		}
+		function RegisterUser() {
+			if (!ValidateEmail($('#email_address').val())) {
+				$("#msg").html("Email address must be in correct format.");
+				return;
+			}
+			if (!ValidateUsername($('#username').val())) {
+				$("#msg").html("Username must be alphanumeric, must start with a letter, and can only contain (A-z0-9._- )");
+				return;
+			}
+			if ($("#password").val().length <= 4) {
+				$("#msg").html("Passwords must be greater than 4 characters.");
+				return;
+			}
+			if ($("#password").val() != $("#password2").val()) {
+				$("#msg").html("Passwords do not match.");
+				return;
+			}
+			$("#register_button").prop("disabled", true);
+			$.ajax( { "url" : website.url + "/ajax/createuser.php",
+				"data" : {
+					"email" : $("#email_address").val(),
+					"password" : $("#password").val()
+				},
+				"method" : "post",
+				success: function(msg) {
+					$("#msg").html('ret='+msg);
+					$("#register_button").prop("disabled", false);
+				}
+			} );
+		}
 		function CreateGame() {
 			$("#GameList").hide();
 			$("#CreateGame").show();
 		}
-
 		function ToggleSidebar() {
-
 			if (window.sidebar == "true") {
 				localStorage.setItem('sidebar', "false");
 				window.sidebar = "false";
 				$('body').removeClass("Sidebar");
 				return;
 			}
-
 			if (window.sidebar == "false")  {
 				localStorage.setItem('sidebar', "true");
 				window.sidebar = "true";
@@ -67,7 +120,6 @@
 		function Sidebar() {
 			$('body').removeClass("Sidebar");
 			window.sidebar = localStorage.getItem('sidebar');
-			console.log(window.sidebar);
 			if (window.sidebar == "true") {
 				$('body').addClass("Sidebar");
 			} else {
@@ -122,6 +174,8 @@
 
 	#CreateGame { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
 
+	#Login { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+
 	.block { padding: 16px; }
 	.block-100 { width: 100px; display: inline-block; }
 	.block-500 { width: 450px; display: inline-block; }
@@ -136,9 +190,11 @@
 	</div>
 
 	<div id = "Navigation">
-		<div style = "width: 300px; margin: 0 auto">
-			<div class = "MenuOption Selected">Browse</div>
-			<div class = "MenuOption" style = "min-width: 120px;" onclick = "CreateGame();">Create My Own Game</div>
+		<div style = "width: 600px; margin: 0 auto">
+			<div class = "MenuOption Selected" onclick = "view('#Browse')">Browse</div>
+			<div class = "MenuOption" style = "min-width: 120px;" onclick = "view('#CreateGame');">Create New Game</div>
+			<div class = "MenuOption" onclick = "view('#Register')">Register</div>
+			<div class = "MenuOption" onclick = "view('#Login')">Login</div>
 			<?php /* <div class = "MenuOption">Popular</div> */ ?>
 		</div>
 	</div>
@@ -148,6 +204,43 @@
 		<div class = "sb-opt"><div class = "icon"></div> My Games</div>
 		<div class = "sb-opt"><div class = "icon"></div> Analytics</div>
 		<div class = "sb-opt"><div class = "icon"></div> Contact</div>
+	</div>
+
+	<div id = "Login">
+
+		<div class = "block">
+			<b>Login To Your Game Painter Account</b>
+		</div>
+
+		<div class = "block">
+			<p>You must be logged in to start making games with Game Painter.</p>
+			<ul>
+				<li>Use Game Painter software to make your game right in your browser.</li>
+				<li>Publish your game for free at <span style = "color: blue">http://www.gamepainter.com/<b>jkD35sfai</b></span> (unique game identifier)</li>
+				<li>Compete with other game developers, receive feedback from players and share your game with friends!</li>
+			</ul>
+
+		</div>
+
+		<div class = "block">
+			<div class = "block-100">Email Address</div>
+			<div class = "block-500"><input type = "text" name = "email" id = "login_email_address" /></div>
+		</div>
+
+		<div class = "block">
+			<div class = "block-100">Password</div>
+			<div class = "block-500"><input type = "text" name = "login_password" id = "login_password"/></div>
+		</div>
+
+		<div class = "block">
+			<p id = "msg">Your login status: enter information above to sign in.</p>
+		</div>
+
+		<div class = "block">
+			<div class = "block-100"></div>
+			<div class = "block-500"><input type = "button" value = "Register" onclick = "SignIn()" id = "signin_button"/></div>
+		</div>
+
 	</div>
 
 	<div id = "CreateGame">
@@ -160,7 +253,7 @@
 			<p>To start making games you need a Game Painter account. This will enable you to:</p>
 			<ul>
 				<li>Use Game Painter software to make your game right in your browser.</li>
-				<li>Publish your game for free at <span style = "color: blue">http://www.gamepainter.com/yourgamename</span></li>
+				<li>Publish your game for free at <span style = "color: blue">http://www.gamepainter.com/<b>jkD35sfai</b></span> (unique game identifier)</li>
 				<li>Compete with other game developers, receive feedback from players and share your game with friends!</li>
 			</ul>
 
@@ -168,31 +261,31 @@
 
 		<div class = "block">
 			<div class = "block-100">Email Address</div>
-			<div class = "block-500"><input type = "text"/></div>
+			<div class = "block-500"><input type = "text" name = "email" id = "email_address" /></div>
 		</div>
 
 		<div class = "block">
 			<div class = "block-100">Username</div>
-			<div class = "block-500"><input type = "text"/></div>
+			<div class = "block-500"><input type = "text" name = "username" id = "username"/></div>
 		</div>
 
 		<div class = "block">
 			<div class = "block-100">Password</div>
-			<div class = "block-500"><input type = "text"/></div>
+			<div class = "block-500"><input type = "password" id = "password"/></div>
 		</div>
 
 		<div class = "block">
 			<div class = "block-100">Password Again</div>
-			<div class = "block-500"><input type = "text"/></div>
+			<div class = "block-500"><input type = "password" id = "password2"/></div>
 		</div>
 
 		<div class = "block">
-			<p>Status of your registration: awaiting information.</p>
+			<p id = "msg">Status of your registration: awaiting information.</p>
 		</div>
 
 		<div class = "block">
 			<div class = "block-100"></div>
-			<div class = "block-500"><input type = "button" value = "Register"/></div>
+			<div class = "block-500"><input type = "button" value = "Register" onclick = "RegisterUser()" id = "register_button"/></div>
 		</div>
 
 	</div>
@@ -210,7 +303,6 @@
 		<?php include("gameblock.php"); ?>
 		<div style = "clear: both"></div>
 	</div>
-
 
 	<div id = "Footer" style = "text-align: center; font-size: 11px; color: gray;">
 		<p>&copy; 2016 Game Painter, developed by <a href = "http://www.tigrisgames.com/" title = "indepedenent game development studio">Tigris Games</a></p>

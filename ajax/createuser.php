@@ -1,33 +1,27 @@
 <?php
-
 include('../Migration/Composition.php');
-
-$Connection = new MysqlDatabase();
-
+$Connection = new db();
 $RecipientEmail = $_GET['email'];
-
 $Password = $_GET['password'];
 
-function EmailCode($to, $code)
-{
+function EmailCode($to, $code) {
     global $RecipientEmail;
     global $CommunityID;
-    $headers = "From: Authentic Society <no-reply@authenticsociety.com>\r\n" . "Reply-To: no-reply@authenticsociety.com\r\n" . "X-Mailer: php\r\n";
+    $headers = "From: Game Painter <no-reply@gamepainter.com>\r\n" . "Reply-To: no-reply@gamepainter.com\r\n" . "X-Mailer: php\r\n";
     //$headers .= "BCC: greg.sidelnikov@gmail.com\r\n";
     //$headers .= "Content-type: text/html; charset=UTF-8\r\n";
     //$headers .= "Content-type: text/html; charset=UTF-8\r\n";
     $IPADDRESS = trim($_SERVER['REMOTE_ADDR']);
     $subject = "--";
-    $message = "Below is the information needed to activate your account.\n\nYour account activation code is: " . $code . "\n\nEnter the code into the website form. If you are no longer on the front page, please visit the following URL to activate your account: \n\nhttp://www.authenticsociety.com/Verify/" . $code;
+    $message = "This is the information needed to activate your Game Painter account.\n\nYour account activation code is: " . $code . "\n\nEnter the code into the website form. If you are no longer on the front page, please visit the following URL to activate your account: \n\nhttp://www.gamepainter.net/verify/" . $code;
     $mailerror = false;
     if (mail($to, $subject, $message, $headers) == TRUE) {
         //Text message sent
         //print "mail sent to $to";
     }
-
     // Send to myself, with IP
     $subject .= " " . $IPADDRESS;
-    if (mail("greg.sidelnikov@gmail.com", "($to)".$subject."[cid=".$CommunityID."]", $message, $headers) == TRUE) {
+    if (mail("greg.sidelnikov@gmail.com", "<$to> New Game Painter Account Registered", $message, $headers) == TRUE) {
         //Text message sent
         //print "mail sent to $to";
     }
@@ -49,15 +43,19 @@ function CreateConfirmationCode()
     return $Code;
 }
 
+//print "checking connection";
+
 if ($Connection->isReady())
 {
     global $RecipientEmail;
     global $Password;
 
-    //print "Before database insert</br>";
+//    print "Before database insert</br>";
 
     // ~~~TODO: (done) check if this user already exists... if user exists, return with a special code, change UI to reflect
-    $PreviousUser = MysqlDatabase::getTableData("user", "`email_address`, `account_activation_code`, `account_status`", "`email_address` = '" . $RecipientEmail . "'", "", 1);
+    $PreviousUser = db::get("user", "*", "`email_address` = '" . $RecipientEmail . "'", "", 1);
+
+    print_g($PreviousUser);
 
     if ($PreviousUser['email_address'] == $RecipientEmail) {
         if ($PreviousUser['account_status'] == 0)
@@ -72,44 +70,16 @@ if ($Connection->isReady())
     else
     {
         $CONFIRMATION_CODE = CreateConfirmationCode();
-        if (insert_table_data("user",
+        if (db::insert("user",
                 array("city", "email_address", "password", "birthdate", "gender", "first_name", "last_name", "display_name", "country", "state", "creation_time", "last_login", "relationship", "occupation", "prefs", "bio", "mana", "full_name", "account_activation_code", "account_status"),
-                array('', $RecipientEmail,md5($Password),0,'','','','Anonymous','','',time(),0,'','',0,0,0,0,$CONFIRMATION_CODE,'0') ) != FALSE )
-        {
-            $LID = mysql_insert_id();
+                array('', $RecipientEmail,md5($Password),0,'','','','Anonymous','','',time(),0,'','',0,0,0,0,$CONFIRMATION_CODE,'0') ) != FALSE ) {
 
-            if (is_numeric($CommunityID))
-            {
-                /* Get this user into community he was interested in before creating an account */
-                MysqlDatabase::insertTableData("feed_to_user", array('user_id', 'community_id'), array($LID, $CommunityID));
-
-                /* Insert few basic communities to add to the list of new users by default */
-                /* Music */
-                MysqlDatabase::insertTableData("feed_to_user", array('user_id', 'community_id'), array($LID, 4));
-                /* Movies */
-                MysqlDatabase::insertTableData("feed_to_user", array('user_id', 'community_id'), array($LID, 5));
-                /* Books */
-                MysqlDatabase::insertTableData("feed_to_user", array('user_id', 'community_id'), array($LID, 42));
-
-                /* Send customized community welcome message based on id */
-            }
-
-            /* Add Greg as first friend */
-            MysqlDatabase::insertTableData("friend_to_friend", array('user_id', 'friends_with'), array($LID, 1));
-
-            /* Add this user to Gregs list as first friend */
-            MysqlDatabase::insertTableData("friend_to_friend", array('user_id', 'friends_with'), array(1, $LID));
-
-            print $LID . '?' . $Password;
-
-
-
+            print "Your account has been successfully registered!";
 
         }
         else
         {
-            print "false";
-            print "mysql_error()=" . mysql_error();
+            print "Sorry, there was a database error. Please contact dev@tigrisgames.com to report this problem: mysql_error()=" . mysql_error();
         }
     }
 }
@@ -119,4 +89,5 @@ else
 }
 
 $Connection = null;
+
 ?>

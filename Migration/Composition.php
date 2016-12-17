@@ -12,13 +12,13 @@
 	
 	/*** Replace with your own domain name ***/
 	
-		= "www.learnjquery.org";	 
-		
+		= "www.gamepainter.net";
+
 	/*** --------------------------------- ***/
-		
+
+    $LOCALHOST_DIR = "gamepainter.net";
 	$PRODUCTION_URL = $URL = "http://" . $DOMAIN_NAME;								// Production URL for A-href links, incl. http://
     $SERVER_PATH = "/var/www/" . str_replace("www.", "", $DOMAIN_NAME) . "/"; 		// Path to the site's root folder -- must have trailing "/"
-    
     $WEBSITE_NAME    = "---";
     $WEBSITE_DESCRIPTION = "---";
     $WEBSITE_DOCTYPE = "<!doctype html>";             		// page doctype
@@ -32,6 +32,7 @@
 	    // Windows:
 	    $FILESYSTEM  ="C://Program Files (x86)//Apache Software Foundation//Apache2.2//htdocs//---"; // __your__ Apache path
 	    $URL = "http://localhost/$LOCALHOST_DIR";
+        $DOMAIN_NAME = $WEBSITE_URL_NAME = $WEBSITE_URL	= $URL;
 	    // Mac: 
    	    //$FILESYSTEM = "/Users/gsidelnikov/Sites/bladerunner";
    	    //$URL = "http://localhost/~gsidelnikov/bladerunner";
