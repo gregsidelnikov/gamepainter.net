@@ -144,9 +144,9 @@
 		<div class = "GameInfo">
 
 			<img src = "http://www.gamepainter.net/make-game.png" alt = "Add Game - Make Your Own Game"/>
-			
 
-			<b><a href = "http://www.gamepainter.net/fFJKHD86vh2461">Make Your Own Game</a></b>
+
+			<?php /* <b><a href = "http://www.gamepainter.net/fFJKHD86vh2461">Make Your Own Game</a></b> */ ?>
 			<div class = "gamedesc">Create your own 2D game, publish it for free on Game Painter and invite friends to play it.</div>
 			<div class = "gamestat">0 plays - now</div>
 		</div>
