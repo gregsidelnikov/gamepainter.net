@@ -1,4 +1,4 @@
-<div id = "Login">
+<div id = "Login" class = "Brightest">
 
     <div class = "block">
         <b>Login To Your Game Painter Account</b>

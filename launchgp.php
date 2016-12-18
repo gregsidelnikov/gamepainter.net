@@ -1,4 +1,4 @@
-<div id = "LaunchGamePainter">
+<div id = "LaunchGamePainter" class = "Brightest">
     <div class = "block">
         <b>Launch Game Painter</b>
     </div>

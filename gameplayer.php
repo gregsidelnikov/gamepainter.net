@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<div id = "GameDescription" style = "margin-top:0;">
+<div id = "GameDescription" style = "margin-top:0;" class = "Brightest">
 
     <div style = "padding: 20px;">
 

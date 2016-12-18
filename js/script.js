@@ -1,3 +1,23 @@
+window.lights = localStorage.getItem("stylesheet");
+function ToggleLights() {
+    if (window.lights == "bright")  {
+        $(".Brightest").stop().animate( { "background-color" : "#000000", "color" : "#888" }, 300);
+        $(".MenuOption").stop().animate( { "border-bottom-color" : "#260a81" }, 300);
+        $(".MenuOption.Selected").stop().animate( { "border-bottom-color" : "#4723ff" }, 300);
+        $("body").stop().animate( { "background-color" : "#0e0e0e" }, 300, function() {
+            switch_style("dark");
+            window.lights = "dark";
+        });
+    } else {
+        $(".Brightest").stop().animate( { "background-color" : "#fff", "color" : "#333" }, 300);
+        $(".MenuOption").stop().animate( { "border-bottom-color" : "#ddd" }, 300);
+        $(".MenuOption.Selected").stop().animate( { "border-bottom-color" : "#a1dc00" }, 300);
+        $("body").stop().animate( { "background-color" : "#f1f1f1" }, 300, function() {
+            switch_style("bright");
+            window.lights = "bright";
+        });
+    }
+}
 function view(id) {
     $(".MenuOption").removeClass("Selected");
     var idd = $(id).attr("id");

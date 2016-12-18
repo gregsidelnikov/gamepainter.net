@@ -1,4 +1,4 @@
-<div id = "RegisterAccount">
+<div id = "RegisterAccount" class = "Brightest">
 
     <div class = "block">
         <b>Register Free Game Painter Account</b>

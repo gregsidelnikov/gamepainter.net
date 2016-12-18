@@ -1,0 +1,48 @@
+.Brightest { background: #000; color: #777; }
+body { font-family: Arial, sans-serif; font-size: 12px; margin: 0; padding: 0; background: #0e0e0e; }
+#Header { height: 48px; background: #fff; border-bottom: 1px solid #e8e8e8; }
+.GameInfo { margin: 16px; margin-bottom: 8px; width: 200px; height: 190px; border: 0; float: left; }
+#MenuOptions { width: 500px; margin: auto; }
+.MenuOption { width: 75px; height: 28px; line-height: 24px; float: left; margin-left: 10px; margin-right: 10px; text-align: center; }
+.MenuOption { border-bottom: 3px solid #260a81; cursor: pointer; }
+.MenuOption.Selected { border-bottom: 3px solid #4723ff; }
+.gamedesc { font-size: 11px; position: relative; font-family: Arial, sans-serif; }
+.gameinfo { font-size: 11px;  }
+.GameInfo a { color: #2388de; text-decoration: none; }
+#Navigation { background: white; width: 100%; height: 31px; margin: 0 auto; position: relative; padding-top: 8px; }
+.gamestat { margin-top: 3px; font-size: 11px; font-family: Arial, sans-serif; color: #777; }
+#GameList { position: relative;  margin: 32px; height: auto; background: #fff; }
+
+#Sidebar { display: none; }
+.sb-opt { cursor: pointer; padding: 5px; height: 30px; line-height: 32px; border-bottom: 1px solid #ddd; color: gray; }
+.sb-opt:hover { background: #555; color: white; }
+
+body.Sidebar #GameList { margin-left: 200px; }
+body.Sidebar #Sidebar { display: block !important; }
+
+#Footer a { color: gray; }
+
+.icon { display: inline-block; width: 16px; height: 16px; border: 1px solid #ddd; vertical-align: middle; margin-top:-3px; margin-left: 6px; margin-right: 8px; }
+
+a { color: #2388de;  }
+
+#username { text-transform: lowercase; }
+
+/* #CreateGame { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; } */
+
+#GamePlayer { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+
+#RegisterAccount { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+
+#Login { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+
+#LaunchGamePainter { position: relative; width: 650px; margin: 32px auto; height: auto; background: #fff; }
+
+.block { padding: 16px; }
+.block-100 { width: 100px; display: inline-block; }
+.block-500 { width: 450px; display: inline-block; }
+
+.MenuOption:hover { border-bottom: 3px #4723ff solid; }
+
+#Register, #RegisterAccount, #Login, #LaunchGamePainter { display:none; }
+
