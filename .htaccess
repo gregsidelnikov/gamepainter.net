@@ -9,4 +9,4 @@ RewriteRule ^(.*)$ http://www.gamepainter.net/$1 [L,R=301]
 RewriteRule ^verify/([A-Za-z0-9]*)$ ajax/verify.php?code=$1
 
 # play game by id
-RewriteRule ^play/([A-Za-z0-9]*)$ play/index.php?code=$1
+#RewriteRule ^play/([A-Za-z0-9]*)$ play/index.php?code=$1

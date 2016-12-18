@@ -1,17 +1,23 @@
-<?php include("../Migration/Composition.php"); ?>
+<?php
+
+include("../Migration/Composition.php");
+
+$GAME_TITLE = "Name of this amazing game";
+
+?>
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
-    <title>Game Painter - Free Online Game Maker Software - No Download</title>
+    <title><?php print $GAME_TITLE; ?></title>
     <?php /* <link rel = "icon" href = "http://www.gamepainter.net/favicon.gif" /> */ ?>
-    <META http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <META http-equiv="Content-Type" content = "text/html;charset=utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <META name = "description" content = "Welcome to Game Painter - The Official Game Maker software, there is no download because it's written in JavaScript language. Make games right in the browser."/>
     <META name = "keywords" content = "game,maker,software,tool,free,no,download,browser,js,javascript,tutorials"/>
-    <meta name="language" content="">
-    <meta http-equiv="content-language" content="en-US" />
-    <meta name="verify-v1" content="---" /> <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <meta property="og:title" content="GamePainter.net - free online game maker software tool no download"/>
+    <meta name = "language" content="">
+    <meta http-equiv = "content-language" content = "en-US" />
+    <meta name = "verify-v1" content = "---" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name = "viewport">
+    <meta property = "og:title" content = "GamePainter.net - free online game maker software tool no download"/>
     <?php /* <meta property="og:type" content="article"/>
 <meta property="og:url" content="http://www.learnjquery.org/homepage/draft-dge1380.0162756006573.html"/>
 <meta property="og:image" content="http://www.learnjquery.org/Images/tutorial-article.png"/>
