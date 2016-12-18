@@ -51,7 +51,7 @@ function SignIn() {
         "data" : {
             "email" : email,
             "password" : pass,
-        },  "method" : "post",
+        }, "method" : "post",
         success: function(msg) {
             //console.log(msg);
             if (msg == 0) {
@@ -60,7 +60,7 @@ function SignIn() {
             else
             if (msg == 1)  {
                 $("#msg").html("Please wait... Logging in...");
-                $.ajax( { "url" : "<?php print $URL; ?>/ajax/makepasswordtoken.php",
+                $.ajax( { "url" : website.url + "/ajax/makepasswordtoken.php",
                     "data" : { "email" : email, "password" : pass },
                     "method" : "post",
                     success: function(msg) {
@@ -68,7 +68,7 @@ function SignIn() {
                         localStorage.setItem("email", email);
                         UpdateUserUI(msg);
                         if (msg != 0 && msg.length > 8)
-                            location.href = '<?php print $URL; ?>';
+                            location.href = website.url;
                     } } );
                 $("#msg").html('You\'ve successfully logged in. Go make games now! <a href = "<?php print $URL; ?>/create">Create New Game</a>');
             }  else $("#msg").html(msg);
