@@ -33,31 +33,7 @@
         website.admin = 0;</script>
 	<script src = '<?php print $URL; ?>/js/script.js' type = 'text/javascript'></script>
     <script type = "text/javascript">
-        /* custom javascript */
-        function switch_style(css_title) {
-            var i, link_tag;
-            for (i = 0, link_tag = document.getElementsByTagName("link"); i < link_tag.length ; i++ ) {
-                if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) && link_tag[i].title) {
-                    link_tag[i].disabled = true;
-                    if (link_tag[i].title == css_title) {
-                        link_tag[i].disabled = false;
-                        console.log("setting stylesheet to " + css_title);
-                        localStorage.setItem("stylesheet", css_title);
-                        if (css_title == "dark") {
-                            $(".Brightest").css( { "background" : "#000000" } );
-                        }
-                    }
-                }
-            }
-        }
-        function set_style_from_localStorage() {
-            var css_title = localStorage.getItem("stylesheet");
-            if (css_title.length) {
-                console.log("css_title = " + css_title);
-                switch_style(css_title);
-            }
-        }
-        $(window).on("load", function(){ set_style_from_localStorage(); });
+
     </script>
 </head>
     <style type = "text/css">
