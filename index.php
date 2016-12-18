@@ -31,7 +31,7 @@
         website.bs_ip = '65.24.43.194';
         website.this_ip = '2600:3c01::f03c:91ff:feae:69f9';
         website.admin = 0;</script>
-	<script src = '<?php print $URL; ?>/js/script.js' type = 'text/javascript'></script>
+    <script src = '<?php print $URL; ?>/js/script.js' type = 'text/javascript'></script>
     <script type = "text/javascript">
 
     </script>

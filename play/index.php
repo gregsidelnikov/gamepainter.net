@@ -39,6 +39,8 @@
 <style type = "text/css">
     /* custom css */
 </style>
+<link rel="stylesheet" type="text/css" title="bright" href="<?php print $URL; ?>/css/style.css">
+<link rel="alternate stylesheet" type="text/css" title="dark" href="<?php print $URL; ?>/css/dark.css">
 </head>
 <body>
 
