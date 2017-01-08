@@ -11,6 +11,8 @@ body { font-family: Arial, sans-serif; font-size: 12px; margin: 0; padding: 0; b
 #Navigation { background: white; width: 100%; height: 31px; margin: 0 auto; position: relative; padding-top: 8px; }
 .gamestat { margin-top: 3px; font-size: 11px; font-family: Arial, sans-serif; color: #777; }
 #GameList { position: relative;  margin: 32px; height: auto; background: #fff; }
+#GamePainterWelcome { position: relative;  margin: 32px; height: auto; background: #fff; }
+
 
 #Sidebar { display: none; }
 .sb-opt { cursor: pointer; padding: 5px; height: 30px; line-height: 32px; border-bottom: 1px solid #ddd; color: gray; }
